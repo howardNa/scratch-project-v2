@@ -47,7 +47,8 @@ app.get('/profile/:id', eventController.viewProfile);
 
 //Create activity button route
 //Create activity + generate location
-app.post('/createactivity', eventController.createActivity, eventController.generateLatAndLong);
+//----------ADD eventController.generateLatAndLong
+app.post('/createactivity', eventController.createActivity);
 
 
 

@@ -15,4 +15,4 @@ export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
 export const LOG_IN = "LOG_IN";
 
 //in 'sign in page'
-export const SIGN_IN = "SIGN_IN";
+export const SIGN_UP = "SIGN_UP";

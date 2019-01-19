@@ -145,6 +145,61 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/ChatBox.css":
+/*!**********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/ChatBox.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".chatbox-container {\\n    display: flex;\\n    flex-direction: column;\\n    align-items: center;\\n}\\n\\nscroll-container {\\n    display: block;\\n    border: 2px solid #EAE1E1;\\n    padding: 10px;\\n    width: 300px;\\n    height: 250px;\\n    overflow-y: scroll;\\n    scroll-behavior: smooth;\\n  }\\n\\n  .input-row {\\n      display: flex;\\n      flex-direction: row;\\n      margin-top: 10px;\\n  }\\n\\n  #message-field {\\n      height: 30px;\\n      width: 268px;\\n      font-size: 15px;\\n  }\\n\\n  #send-button {\\n      margin-left: 14px;\\n  }\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/ChatBox.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/CreateActivity.css":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/CreateActivity.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/CreateActivity.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/DetailsComponent.css":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/DetailsComponent.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".details-container {\\n    margin-top: 35px;\\n}\\n\\n.activity-item-row {\\n    display: flex;\\n    flex-direction: row;\\n    align-content: center;\\n    justify-content: center;\\n}\\n\\n.host-column {\\n    display: flex;\\n    flex-direction: column;\\n    text-align: center;\\n}\\n\\n.host-img {\\n    height: 115px;\\n    width: 115px;\\n}\\n\\n.host-name {\\n    margin: 0;\\n}\\n\\n.description-column {\\n    margin-top: 20px;\\n    margin-left: 20px;\\n    width: 450px;\\n}\\n\\n.description-item {\\n    margin: 0;\\n    padding-bottom: 5px;\\n}\\n\\n.buttons-column {\\n    display: flex;\\n    flex-direction: column;\\n    margin-top: 30px;\\n    margin-left: 20px;\\n}\\n\\n.button-item {\\n    height: 30px;\\n    width: 90px;\\n    font-size: 14px;\\n    border-radius: 5px;\\n    margin-top: 10px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/DetailsComponent.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/Going.css":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/Going.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".going-container {\\n    display: flex;\\n    flex-direction: column;\\n    text-align:center;\\n    margin-top: 20px;\\n\\n}\\n\\n.going-header {\\n    margin-bottom: 0;\\n}\\n\\n.going-person {\\n    margin: 0;\\n    padding-bottom: 10px;\\n    font-size: 20px;\\n\\n\\n}\\n\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/Going.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/LogIn.css":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/LogIn.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".log-in-container {\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: center;\\n    margin-top: 30px;\\n    width: 100%;\\n\\n}\\n\\n.log-in-box {\\n    display: flex;\\n    flex-direction: column;\\n    align-items: center;\\n    justify-items: center;\\n    padding: 10px;\\n    border: 1px solid #DBCECE;\\n    border-radius: 5px;\\n}\\n\\n.username-row, .password-row{\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n#username-field, #password-field, #first-name-input, #last-name-input, #birthdate-input, #image-input{\\n    height: 25px;\\n    margin-left: 10px;\\n    margin-top: 18px;\\n    font-size: 15px;\\n}\\n\\n.log-in-box p {\\n    font-size: 20px;\\n}\\n\\n#sign-in-button {\\n    height: 40px;\\n    width: 75px;\\n    font-size: 18px;\\n    margin-top: 15px;\\n    margin-left: 190px;\\n    border-radius: 5px;\\n}\\n\\n#sign-up-button {\\n    height: 60px;\\n    width: 60px;\\n    font-size: 18px;\\n    margin-top: 15px;\\n    margin-left: 180px;\\n    border-radius: 5px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/LogIn.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/NavComponent.css":
 /*!***************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/NavComponent.css ***!
@@ -152,7 +207,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".navbar-flex {\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n.nav-logo {\\n    margin-left: 20px;\\n}\\n\\n.nav-links {\\n    margin-left: 960px;\\n    margin-top: 30px;\\n}\\n\\n.link {\\n    margin-left: 15px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/NavComponent.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".navbar-flex {\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n.nav-logo {\\n    margin-left: 20px;\\n}\\n\\n.nav-links {\\n    margin-left: 850px;\\n    margin-top: 30px;\\n}\\n\\n.link {\\n    margin-left: 15px;\\n    font-size: 18px;\\n}\\n\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/NavComponent.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -163,7 +218,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".main-search-bar-container {\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: center;\\n    margin-top: 35px;\\n    width: 100%;\\n}\\n\\n.search-bar-flex-container {\\n    display: flex;\\n    flex-direction: column;\\n    justify-content: center;\\n    align-items: center;\\n    width: 50%;\\n}\\n\\n.activity-input {\\n    height: 30px;\\n    width: 225x;\\n    font-size: 18px;\\n}\\n\\n.time-row-container {\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n.time-input {\\n    height: 30px;\\n    width: 90px;\\n    font-size: 18px;\\n    margin-top: 20px;\\n}\\n\\n.to-margin {\\n    margin-right: 10px;\\n    margin-left: 10px;\\n}\\n\\n.go-button {\\n    height: 40px;\\n    width: 40px;\\n    font-size: 18px;\\n    border-radius: 5px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/SearchBox.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".main-search-bar-container {\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: center;\\n    margin-top: 35px;\\n    width: 100%;\\n}\\n\\n.search-bar-flex-container {\\n    display: flex;\\n    flex-direction: column;\\n    justify-content: center;\\n    align-items: center;\\n    width: 50%;\\n}\\n\\n.activity-input {\\n    height: 30px;\\n    width: 225x;\\n    font-size: 18px;\\n}\\n\\n.time-row-container {\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n.time-input {\\n    height: 30px;\\n    width: 90px;\\n    font-size: 18px;\\n    margin-top: 20px;\\n}\\n\\n.to-margin {\\n    margin-right: 10px;\\n    margin-left: 10px;\\n}\\n\\n.go-button {\\n    height: 40px;\\n    width: 40px;\\n    font-size: 18px;\\n    border-radius: 5px;\\n}\\n\\n.location-input {\\n    height: 30px;\\n    width: 230px;\\n    font-size: 18px;\\n    margin-bottom: 15px;\\n}\\n\\n.create-button {\\n    height: 40px;\\n    width: 80px;\\n    font-size: 18px;\\n    border-radius: 5px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/SearchBox.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -174,7 +229,29 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".activity-item-container {\\n    margin-top: 20px;\\n}\\n\\n.activity-item-row {\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n.profile-img {\\n    height: 115px;\\n    width: 115px;\\n}\\n\\n.description-column {\\n    margin-top: 10px;\\n    margin-left: 20px;\\n    width: 450px;\\n}\\n\\n.description-item {\\n    margin: 0;\\n    padding-bottom: 5px;\\n}\\n\\n.details-button {\\n    height: 35px;\\n    width: 60px;\\n    font-size: 14px;\\n    margin-top: 35px;\\n    margin-left: 25px;\\n    border-radius: 5px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/SingleActivityItem.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".activity-item-container {\\n    margin-top: 35px;\\n}\\n\\n.activity-item-row {\\n    display: flex;\\n    flex-direction: row;\\n}\\n\\n.host-column {\\n    display: flex;\\n    flex-direction: column;\\n    text-align: center;\\n}\\n\\n.host-img {\\n    height: 115px;\\n    width: 115px;\\n}\\n\\n.host-name {\\n    margin: 0;\\n}\\n\\n.description-column {\\n    margin-top: 20px;\\n    margin-left: 20px;\\n    width: 450px;\\n}\\n\\n.description-item {\\n    margin: 0;\\n    padding-bottom: 5px;\\n}\\n\\n.details-button {\\n    height: 35px;\\n    width: 60px;\\n    font-size: 14px;\\n    margin-top: 35px;\\n    margin-left: 25px;\\n    border-radius: 5px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/SingleActivityItem.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/UserEventsComponent.css":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/UserEventsComponent.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\n.event-status-header {\\n    text-align: center;\\n    margin: 0;\\n    margin-top: 30px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/UserEventsComponent.css?./node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/UserProfile.css":
+/*!**************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/UserProfile.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \".user-profile-container {\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: center;\\n    margin-top: 35px;\\n    width: 100%;\\n}\\n\\n.user-info {\\n    display: flex;\\n    flex-direction: row;\\n    justify-content: center;\\n    border: 1px solid #EAE1E1;\\n    border-radius: 5px;\\n    height: 150px;\\n    padding-top: 15px;\\n    padding-right: 20px;\\n\\n}\\n\\n.user-img {\\n    height: 115px;\\n    width: 115px;\\n}\\n\\n.user-info-column {\\n    display: flex;\\n    flex-direction: column;\\n    margin-left: 10px;\\n    margin-top: 15px;\\n}\\n\\n.user-info-row {\\n    margin: 0;\\n    padding-top: 6px;\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/styles/UserProfile.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -1179,6 +1256,78 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./src/components/ChatBox.js":
+/*!***********************************!*\
+  !*** ./src/components/ChatBox.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/ChatBox.css */ \"./src/styles/ChatBox.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ChatBox = function ChatBox() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'chatbox-container' },\n        _react2.default.createElement(\n            'h3',\n            null,\n            'Chatbox'\n        ),\n        _react2.default.createElement('scroll-container', { id: 'chatbox' }),\n        _react2.default.createElement(\n            'div',\n            { className: 'input-row' },\n            _react2.default.createElement('input', { id: 'message-field' }),\n            _react2.default.createElement(\n                'button',\n                { id: 'send-button' },\n                'Send'\n            )\n        )\n    );\n};\n\nexports.default = ChatBox;\n\n//# sourceURL=webpack:///./src/components/ChatBox.js?");
+
+/***/ }),
+
+/***/ "./src/components/CreateActivity.js":
+/*!******************************************!*\
+  !*** ./src/components/CreateActivity.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _SingleActivityItem = __webpack_require__(/*! ./SingleActivityItem */ \"./src/components/SingleActivityItem.js\");\n\nvar _SingleActivityItem2 = _interopRequireDefault(_SingleActivityItem);\n\n__webpack_require__(/*! ../styles/CreateActivity.css */ \"./src/styles/CreateActivity.css\");\n\n__webpack_require__(/*! ../styles/SearchBox.css */ \"./src/styles/SearchBox.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar CreateActivity = function CreateActivity() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'main-search-bar-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'search-bar-flex-container' },\n            _react2.default.createElement(\n                'h2',\n                null,\n                'I want to ...'\n            ),\n            _react2.default.createElement('input', { className: 'activity-input' }),\n            _react2.default.createElement(\n                'h2',\n                null,\n                'around'\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'time-row-container' },\n                _react2.default.createElement('input', { className: 'time-input' }),\n                _react2.default.createElement(\n                    'h2',\n                    { className: 'to-margin' },\n                    'to'\n                ),\n                _react2.default.createElement('input', { className: 'time-input' })\n            ),\n            _react2.default.createElement(\n                'h2',\n                null,\n                'at'\n            ),\n            _react2.default.createElement('input', { className: 'location-input' }),\n            _react2.default.createElement(\n                'button',\n                { className: 'create-button' },\n                'Create'\n            )\n        )\n    );\n};\n\nexports.default = CreateActivity;\n\n//# sourceURL=webpack:///./src/components/CreateActivity.js?");
+
+/***/ }),
+
+/***/ "./src/components/DetailsComponent.js":
+/*!********************************************!*\
+  !*** ./src/components/DetailsComponent.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/DetailsComponent.css */ \"./src/styles/DetailsComponent.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar DetailsComponent = function DetailsComponent() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'details-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'activity-item-row' },\n            _react2.default.createElement(\n                'div',\n                { className: 'host-column' },\n                _react2.default.createElement('img', { className: 'host-img', src: '../../build/images/stick-figure-dude.png' }),\n                _react2.default.createElement(\n                    'h5',\n                    { className: 'host-name' },\n                    'Tim'\n                )\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'description-column' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'description-item' },\n                    'Tennis'\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'description-item' },\n                    'Venice Beach'\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'description-item' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        '7:30pm - 9:00pm'\n                    )\n                ),\n                _react2.default.createElement(\n                    'p',\n                    { className: 'description-item' },\n                    'Looking for a hitting partner. I have an extra racket and tennis balls.'\n                )\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'buttons-column' },\n                _react2.default.createElement(\n                    'button',\n                    { className: 'button-item' },\n                    'Interested'\n                ),\n                _react2.default.createElement(\n                    'button',\n                    { className: 'button-item' },\n                    'Confirm'\n                )\n            )\n        )\n    );\n};\n\nexports.default = DetailsComponent;\n\n//# sourceURL=webpack:///./src/components/DetailsComponent.js?");
+
+/***/ }),
+
+/***/ "./src/components/GoingComponent.js":
+/*!******************************************!*\
+  !*** ./src/components/GoingComponent.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _GoingPerson = __webpack_require__(/*! ./GoingPerson.js */ \"./src/components/GoingPerson.js\");\n\nvar _GoingPerson2 = _interopRequireDefault(_GoingPerson);\n\n__webpack_require__(/*! ../styles/Going.css */ \"./src/styles/Going.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar GoingComponent = function GoingComponent() {\n\n  return _react2.default.createElement(\n    'div',\n    { className: 'going-container' },\n    _react2.default.createElement(\n      'h2',\n      { className: 'going-header' },\n      'Going'\n    ),\n    _react2.default.createElement(_GoingPerson2.default, null)\n  );\n};\n\nexports.default = GoingComponent;\n\n//# sourceURL=webpack:///./src/components/GoingComponent.js?");
+
+/***/ }),
+
+/***/ "./src/components/GoingPerson.js":
+/*!***************************************!*\
+  !*** ./src/components/GoingPerson.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/Going.css */ \"./src/styles/Going.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar GoingPerson = function GoingPerson() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'going-person' },\n    _react2.default.createElement(\n      'p',\n      null,\n      'Braden'\n    )\n  );\n};\n\nexports.default = GoingPerson;\n\n//# sourceURL=webpack:///./src/components/GoingPerson.js?");
+
+/***/ }),
+
+/***/ "./src/components/LogIn.js":
+/*!*********************************!*\
+  !*** ./src/components/LogIn.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/LogIn.css */ \"./src/styles/LogIn.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar LogIn = function LogIn() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'log-in-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'log-in-box' },\n            _react2.default.createElement(\n                'div',\n                { className: 'username-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'Username: '\n                ),\n                _react2.default.createElement('input', { id: 'username-field' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'password-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'Password: '\n                ),\n                _react2.default.createElement('input', { id: 'password-field' })\n            ),\n            _react2.default.createElement(\n                'button',\n                { id: 'sign-in-button' },\n                'Log in'\n            )\n        )\n    );\n};\n\nexports.default = LogIn;\n\n//# sourceURL=webpack:///./src/components/LogIn.js?");
+
+/***/ }),
+
 /***/ "./src/components/NavComponent.js":
 /*!****************************************!*\
   !*** ./src/components/NavComponent.js ***!
@@ -1187,7 +1336,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/NavComponent.css */ \"./src/styles/NavComponent.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar NavComponent = function NavComponent() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'navbar-flex' },\n    _react2.default.createElement(\n      'h1',\n      { className: 'nav-logo' },\n      'Scratch-Logo'\n    ),\n    _react2.default.createElement(\n      'div',\n      { className: 'nav-links' },\n      _react2.default.createElement(\n        'a',\n        { className: 'link', href: '#' },\n        'Create Activity'\n      ),\n      _react2.default.createElement(\n        'a',\n        { className: 'link', href: '#' },\n        'Log-in'\n      ),\n      _react2.default.createElement(\n        'a',\n        { className: 'link', href: '#' },\n        'Sign up'\n      )\n    )\n  );\n};\n\nexports.default = NavComponent;\n\n//# sourceURL=webpack:///./src/components/NavComponent.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/NavComponent.css */ \"./src/styles/NavComponent.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar NavComponent = function NavComponent() {\n  return _react2.default.createElement(\n    'div',\n    { className: 'navbar-flex' },\n    _react2.default.createElement(\n      'h1',\n      { className: 'nav-logo' },\n      'Scratch-Logo'\n    ),\n    _react2.default.createElement(\n      'div',\n      { className: 'nav-links' },\n      _react2.default.createElement(\n        _reactRouterDom.Link,\n        { className: 'link', to: '/' },\n        'Activities'\n      ),\n      _react2.default.createElement(\n        _reactRouterDom.Link,\n        { className: 'link', to: '/profile' },\n        'Profile'\n      ),\n      _react2.default.createElement(\n        _reactRouterDom.Link,\n        { className: 'link', to: '/create' },\n        'Create Activity'\n      )\n    )\n  );\n};\n\nexports.default = NavComponent;\n\n//# sourceURL=webpack:///./src/components/NavComponent.js?");
 
 /***/ }),
 
@@ -1203,6 +1352,18 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 
 /***/ }),
 
+/***/ "./src/components/SignUp.js":
+/*!**********************************!*\
+  !*** ./src/components/SignUp.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/LogIn.css */ \"./src/styles/LogIn.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar SignUp = function SignUp() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'log-in-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'log-in-box' },\n            _react2.default.createElement(\n                'div',\n                { className: 'username-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'First Name: '\n                ),\n                _react2.default.createElement('input', { id: 'first-name-input' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'username-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'Last Name: '\n                ),\n                _react2.default.createElement('input', { id: 'last-name-input' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'username-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'Birthdate: '\n                ),\n                _react2.default.createElement('input', { id: 'birthdate-input' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'username-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    'Image URL: '\n                ),\n                _react2.default.createElement('input', { id: 'image-input' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'username-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        _react2.default.createElement(\n                            'strong',\n                            null,\n                            'Username: '\n                        )\n                    )\n                ),\n                _react2.default.createElement('input', { id: 'username-field' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'password-row' },\n                _react2.default.createElement(\n                    'p',\n                    null,\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        _react2.default.createElement(\n                            'strong',\n                            null,\n                            'Password: '\n                        )\n                    )\n                ),\n                _react2.default.createElement('input', { id: 'password-field' })\n            ),\n            _react2.default.createElement(\n                'button',\n                { id: 'sign-up-button' },\n                'Sign up'\n            )\n        )\n    );\n};\n\nexports.default = SignUp;\n\n//# sourceURL=webpack:///./src/components/SignUp.js?");
+
+/***/ }),
+
 /***/ "./src/components/SingleActivityItem.js":
 /*!**********************************************!*\
   !*** ./src/components/SingleActivityItem.js ***!
@@ -1211,7 +1372,31 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/SingleActivityItem.css */ \"./src/styles/SingleActivityItem.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar SingleActivityItem = function SingleActivityItem() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'activity-item-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'activity-item-row' },\n            _react2.default.createElement(\n                'div',\n                null,\n                _react2.default.createElement(\n                    'h5',\n                    null,\n                    'Tim'\n                ),\n                _react2.default.createElement('img', { className: 'profile-img', src: '../../build/images/stick-figure-dude.png' })\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'description-column' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'description-item' },\n                    'Tennis'\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'description-item' },\n                    'Venice Beach'\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'description-item' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        '7:30pm - 9:00pm'\n                    )\n                ),\n                _react2.default.createElement(\n                    'p',\n                    { className: 'description-item' },\n                    'Looking for a hitting partner. I have an extra racket and tennis balls.'\n                )\n            ),\n            _react2.default.createElement(\n                'button',\n                { className: 'details-button' },\n                'View'\n            )\n        )\n    );\n};\n\nexports.default = SingleActivityItem;\n\n//# sourceURL=webpack:///./src/components/SingleActivityItem.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/SingleActivityItem.css */ \"./src/styles/SingleActivityItem.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar SingleActivityItem = function SingleActivityItem() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'activity-item-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'activity-item-row' },\n            _react2.default.createElement(\n                'div',\n                { className: 'host-column' },\n                _react2.default.createElement('img', { className: 'host-img', src: '../../build/images/stick-figure-dude.png' }),\n                _react2.default.createElement(\n                    'h5',\n                    { className: 'host-name' },\n                    'Tim'\n                )\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'description-column' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'description-item' },\n                    'Tennis'\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'description-item' },\n                    'Venice Beach'\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'description-item' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        '7:30pm - 9:00pm'\n                    )\n                ),\n                _react2.default.createElement(\n                    'p',\n                    { className: 'description-item' },\n                    'Looking for a hitting partner. I have an extra racket and tennis balls.'\n                )\n            ),\n            _react2.default.createElement(\n                'button',\n                { className: 'details-button' },\n                'View'\n            )\n        )\n    );\n};\n\nexports.default = SingleActivityItem;\n\n//# sourceURL=webpack:///./src/components/SingleActivityItem.js?");
+
+/***/ }),
+
+/***/ "./src/components/UserEventsComponent.js":
+/*!***********************************************!*\
+  !*** ./src/components/UserEventsComponent.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _GoingPerson = __webpack_require__(/*! ./GoingPerson.js */ \"./src/components/GoingPerson.js\");\n\nvar _GoingPerson2 = _interopRequireDefault(_GoingPerson);\n\nvar _SingleActivityItem = __webpack_require__(/*! ./SingleActivityItem */ \"./src/components/SingleActivityItem.js\");\n\nvar _SingleActivityItem2 = _interopRequireDefault(_SingleActivityItem);\n\n__webpack_require__(/*! ../styles/UserEventsComponent.css */ \"./src/styles/UserEventsComponent.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar UserEventsComponent = function UserEventsComponent() {\n\n    return _react2.default.createElement(\n        'div',\n        { className: 'user-events-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'user-events-list' },\n            _react2.default.createElement(\n                'div',\n                { className: 'going-event' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'event-status-header' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        'Going'\n                    )\n                ),\n                _react2.default.createElement(_SingleActivityItem2.default, null)\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'created-event' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'event-status-header' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        'Created'\n                    )\n                ),\n                _react2.default.createElement(_SingleActivityItem2.default, null)\n            ),\n            _react2.default.createElement(\n                'div',\n                { className: 'interested-event' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'event-status-header' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        'Interested'\n                    )\n                ),\n                _react2.default.createElement(_SingleActivityItem2.default, null)\n            )\n        )\n    );\n};\n\nexports.default = UserEventsComponent;\n\n//# sourceURL=webpack:///./src/components/UserEventsComponent.js?");
+
+/***/ }),
+
+/***/ "./src/components/UserProfile.js":
+/*!***************************************!*\
+  !*** ./src/components/UserProfile.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\n__webpack_require__(/*! ../styles/UserProfile.css */ \"./src/styles/UserProfile.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar UserProfile = function UserProfile() {\n    return _react2.default.createElement(\n        'div',\n        { className: 'user-profile-container' },\n        _react2.default.createElement(\n            'div',\n            { className: 'user-info' },\n            _react2.default.createElement('img', { className: 'user-img', src: '../../build/images/stick-figure-dude.png' }),\n            _react2.default.createElement(\n                'div',\n                { className: 'user-info-column' },\n                _react2.default.createElement(\n                    'h3',\n                    { className: 'user-info-row' },\n                    'Tim Mayfield'\n                ),\n                _react2.default.createElement(\n                    'p',\n                    { className: 'user-info-row' },\n                    _react2.default.createElement(\n                        'i',\n                        null,\n                        'tMayfield87'\n                    )\n                ),\n                _react2.default.createElement(\n                    'h4',\n                    { className: 'user-info-row' },\n                    'June 7, 1987'\n                )\n            )\n        )\n    );\n};\n\nexports.default = UserProfile;\n\n//# sourceURL=webpack:///./src/components/UserProfile.js?");
 
 /***/ }),
 
@@ -1223,7 +1408,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _SearchBox = __webpack_require__(/*! ../components/SearchBox.js */ \"./src/components/SearchBox.js\");\n\nvar _SearchBox2 = _interopRequireDefault(_SearchBox);\n\nvar _Activities = __webpack_require__(/*! ../components/Activities.js */ \"./src/components/Activities.js\");\n\nvar _Activities2 = _interopRequireDefault(_Activities);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ActivitiesContainer = function ActivitiesContainer(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_SearchBox2.default, null),\n    _react2.default.createElement(_Activities2.default, null)\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(ActivitiesContainer));\n\n//# sourceURL=webpack:///./src/containers/ActivitiesContainer.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _SearchBox = __webpack_require__(/*! ../components/SearchBox.js */ \"./src/components/SearchBox.js\");\n\nvar _SearchBox2 = _interopRequireDefault(_SearchBox);\n\nvar _Activities = __webpack_require__(/*! ../components/Activities.js */ \"./src/components/Activities.js\");\n\nvar _Activities2 = _interopRequireDefault(_Activities);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar mapStateToProps = function mapStateToProps(store) {\n  return {\n\n    // lastMarketId: store.markets.lastMarketId,\n    // marketList: store.markets.marketList\n\n\n  };\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n\n    // create functions that will dispatch action creators\n    // createMarket: (e) => {\n    //   console.log('e.target after clicking add market: ', e.target)\n    //   dispatch(actions.createMarket())\n    // },\n\n    // setNewLocation: (e) => {\n    //   console.log('e.target after changing LOCATION: ', e.target)\n    //   dispatch(actions.setNewLocation(e.target.value))\n    // }\n\n  };\n};\n\nvar ActivitiesContainer = function ActivitiesContainer(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_SearchBox2.default, null),\n    _react2.default.createElement(_Activities2.default, null)\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(ActivitiesContainer));\n\n//# sourceURL=webpack:///./src/containers/ActivitiesContainer.js?");
 
 /***/ }),
 
@@ -1235,7 +1420,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _SearchBox = __webpack_require__(/*! ../components/SearchBox */ \"./src/components/SearchBox.js\");\n\nvar _SearchBox2 = _interopRequireDefault(_SearchBox);\n\nvar _Activities = __webpack_require__(/*! ../components/Activities */ \"./src/components/Activities.js\");\n\nvar _Activities2 = _interopRequireDefault(_Activities);\n\nvar _ActivitiesContainer = __webpack_require__(/*! ./ActivitiesContainer */ \"./src/containers/ActivitiesContainer.js\");\n\nvar _ActivitiesContainer2 = _interopRequireDefault(_ActivitiesContainer);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Main = function Main(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      _reactRouterDom.Switch,\n      null,\n      _react2.default.createElement(_reactRouterDom.Route, {\n        exact: true, path: '/',\n        component: _ActivitiesContainer2.default\n      })\n    )\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(Main));\n\n//# sourceURL=webpack:///./src/containers/Main.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _ActivitiesContainer = __webpack_require__(/*! ./ActivitiesContainer */ \"./src/containers/ActivitiesContainer.js\");\n\nvar _ActivitiesContainer2 = _interopRequireDefault(_ActivitiesContainer);\n\nvar _ViewContainer = __webpack_require__(/*! ./ViewContainer.js */ \"./src/containers/ViewContainer.js\");\n\nvar _ViewContainer2 = _interopRequireDefault(_ViewContainer);\n\nvar _UserEventsContainer = __webpack_require__(/*! ./UserEventsContainer.js */ \"./src/containers/UserEventsContainer.js\");\n\nvar _UserEventsContainer2 = _interopRequireDefault(_UserEventsContainer);\n\nvar _CreateActivity = __webpack_require__(/*! ../components/CreateActivity.js */ \"./src/components/CreateActivity.js\");\n\nvar _CreateActivity2 = _interopRequireDefault(_CreateActivity);\n\nvar _LogIn = __webpack_require__(/*! ../components/LogIn.js */ \"./src/components/LogIn.js\");\n\nvar _LogIn2 = _interopRequireDefault(_LogIn);\n\nvar _SignUp = __webpack_require__(/*! ../components/SignUp.js */ \"./src/components/SignUp.js\");\n\nvar _SignUp2 = _interopRequireDefault(_SignUp);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Main = function Main(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      _reactRouterDom.Switch,\n      null,\n      _react2.default.createElement(_reactRouterDom.Route, {\n        exact: true, path: '/',\n        component: _LogIn2.default\n      }),\n      _react2.default.createElement(_reactRouterDom.Route, {\n        exact: true, path: '/activity/:id',\n        component: _ViewContainer2.default\n      }),\n      _react2.default.createElement(_reactRouterDom.Route, {\n        exact: true, path: '/profile',\n        component: _UserEventsContainer2.default\n      }),\n      _react2.default.createElement(_reactRouterDom.Route, {\n        exact: true, path: '/create',\n        component: _CreateActivity2.default\n      })\n    )\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(Main));\n\n//# sourceURL=webpack:///./src/containers/Main.js?");
 
 /***/ }),
 
@@ -1248,6 +1433,30 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 "use strict";
 eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _NavComponent = __webpack_require__(/*! ../components/NavComponent.js */ \"./src/components/NavComponent.js\");\n\nvar _NavComponent2 = _interopRequireDefault(_NavComponent);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar NavContainer = function NavContainer(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_NavComponent2.default, null)\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(NavContainer));\n\n//# sourceURL=webpack:///./src/containers/NavContainer.js?");
+
+/***/ }),
+
+/***/ "./src/containers/UserEventsContainer.js":
+/*!***********************************************!*\
+  !*** ./src/containers/UserEventsContainer.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _UserProfile = __webpack_require__(/*! ../components/UserProfile.js */ \"./src/components/UserProfile.js\");\n\nvar _UserProfile2 = _interopRequireDefault(_UserProfile);\n\nvar _UserEventsComponent = __webpack_require__(/*! ../components/UserEventsComponent.js */ \"./src/components/UserEventsComponent.js\");\n\nvar _UserEventsComponent2 = _interopRequireDefault(_UserEventsComponent);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar UserEventsContainer = function UserEventsContainer(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_UserProfile2.default, null),\n    _react2.default.createElement(_UserEventsComponent2.default, null)\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(UserEventsContainer));\n\n//# sourceURL=webpack:///./src/containers/UserEventsContainer.js?");
+
+/***/ }),
+
+/***/ "./src/containers/ViewContainer.js":
+/*!*****************************************!*\
+  !*** ./src/containers/ViewContainer.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _DetailsComponent = __webpack_require__(/*! ../components/DetailsComponent.js */ \"./src/components/DetailsComponent.js\");\n\nvar _DetailsComponent2 = _interopRequireDefault(_DetailsComponent);\n\nvar _GoingComponent = __webpack_require__(/*! ../components/GoingComponent.js */ \"./src/components/GoingComponent.js\");\n\nvar _GoingComponent2 = _interopRequireDefault(_GoingComponent);\n\nvar _ChatBox = __webpack_require__(/*! ../components/ChatBox.js */ \"./src/components/ChatBox.js\");\n\nvar _ChatBox2 = _interopRequireDefault(_ChatBox);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar ViewContainer = function ViewContainer(props) {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_DetailsComponent2.default, null),\n    _react2.default.createElement(_GoingComponent2.default, null),\n    _react2.default.createElement(_ChatBox2.default, null)\n  );\n};\n\nexports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null, null)(ViewContainer));\n\n//# sourceURL=webpack:///./src/containers/ViewContainer.js?");
 
 /***/ }),
 
@@ -1271,7 +1480,7 @@ eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/i
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n//# sourceURL=webpack:///./src/store/actionTypes.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n//activities in front page\nvar SEARCH_ACTIVITY = exports.SEARCH_ACTIVITY = \"SEARCH_ACTIVITY\";\nvar VIEW_ACTIVITY = exports.VIEW_ACTIVITY = \"VIEW_ACTIVITY\";\n\n//activities in \"view acitivity page\"\nvar INTERESTED_IN_ACTIVITY = exports.INTERESTED_IN_ACTIVITY = \"INTERESTED_IN_ACTIVITY\";\nvar CONFIRM_ACTIVITY = exports.CONFIRM_ACTIVITY = \"CONFIRM_ACTIVITY\";\nvar SEND_MESSAGE = exports.SEND_MESSAGE = \"SEND_MESSAGE\";\n\n// in 'create activity page'\nvar CREATE_ACTIVITY = exports.CREATE_ACTIVITY = \"CREATE_ACTIVITY\";\n\n//in 'log in page'\nvar LOG_IN = exports.LOG_IN = \"LOG_IN\";\n\n//in 'sign in page'\nvar SIGN_IN = exports.SIGN_IN = \"SIGN_IN\";\n\n//# sourceURL=webpack:///./src/store/actionTypes.js?");
 
 /***/ }),
 
@@ -1322,6 +1531,61 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dis
 
 /***/ }),
 
+/***/ "./src/styles/ChatBox.css":
+/*!********************************!*\
+  !*** ./src/styles/ChatBox.css ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./ChatBox.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/ChatBox.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/ChatBox.css?");
+
+/***/ }),
+
+/***/ "./src/styles/CreateActivity.css":
+/*!***************************************!*\
+  !*** ./src/styles/CreateActivity.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./CreateActivity.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/CreateActivity.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/CreateActivity.css?");
+
+/***/ }),
+
+/***/ "./src/styles/DetailsComponent.css":
+/*!*****************************************!*\
+  !*** ./src/styles/DetailsComponent.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./DetailsComponent.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/DetailsComponent.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/DetailsComponent.css?");
+
+/***/ }),
+
+/***/ "./src/styles/Going.css":
+/*!******************************!*\
+  !*** ./src/styles/Going.css ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./Going.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/Going.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/Going.css?");
+
+/***/ }),
+
+/***/ "./src/styles/LogIn.css":
+/*!******************************!*\
+  !*** ./src/styles/LogIn.css ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./LogIn.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/LogIn.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/LogIn.css?");
+
+/***/ }),
+
 /***/ "./src/styles/NavComponent.css":
 /*!*************************************!*\
   !*** ./src/styles/NavComponent.css ***!
@@ -1352,6 +1616,28 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dis
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./SingleActivityItem.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/SingleActivityItem.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/SingleActivityItem.css?");
+
+/***/ }),
+
+/***/ "./src/styles/UserEventsComponent.css":
+/*!********************************************!*\
+  !*** ./src/styles/UserEventsComponent.css ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./UserEventsComponent.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/UserEventsComponent.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/UserEventsComponent.css?");
+
+/***/ }),
+
+/***/ "./src/styles/UserProfile.css":
+/*!************************************!*\
+  !*** ./src/styles/UserProfile.css ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./UserProfile.css */ \"./node_modules/css-loader/dist/cjs.js!./src/styles/UserProfile.css\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/styles/UserProfile.css?");
 
 /***/ })
 

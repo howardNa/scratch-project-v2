@@ -1,0 +1,51 @@
+.details-container {
+    margin-top: 35px;
+}
+
+.activity-item-row {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.host-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.host-img {
+    height: 115px;
+    width: 115px;
+}
+
+.host-name {
+    margin: 0;
+}
+
+.description-column {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 450px;
+}
+
+.description-item {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.button-item {
+    height: 30px;
+    width: 90px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+}

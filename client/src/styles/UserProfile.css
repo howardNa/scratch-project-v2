@@ -1,0 +1,36 @@
+.user-profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid #EAE1E1;
+    border-radius: 5px;
+    height: 150px;
+    padding-top: 15px;
+    padding-right: 20px;
+
+}
+
+.user-img {
+    height: 115px;
+    width: 115px;
+}
+
+.user-info-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.user-info-row {
+    margin: 0;
+    padding-top: 6px;
+}

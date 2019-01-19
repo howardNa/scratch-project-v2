@@ -1,0 +1,19 @@
+.navbar-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-logo {
+    margin-left: 20px;
+}
+
+.nav-links {
+    margin-left: 850px;
+    margin-top: 30px;
+}
+
+.link {
+    margin-left: 15px;
+    font-size: 18px;
+}
+

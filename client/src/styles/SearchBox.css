@@ -1,0 +1,59 @@
+.main-search-bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.search-bar-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.activity-input {
+    height: 30px;
+    width: 225x;
+    font-size: 18px;
+}
+
+.time-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.time-input {
+    height: 30px;
+    width: 90px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.to-margin {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.go-button {
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.location-input {
+    height: 30px;
+    width: 230px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.create-button {
+    height: 40px;
+    width: 80px;
+    font-size: 18px;
+    border-radius: 5px;
+}

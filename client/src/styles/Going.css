@@ -1,0 +1,20 @@
+.going-container {
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    margin-top: 20px;
+
+}
+
+.going-header {
+    margin-bottom: 0;
+}
+
+.going-person {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 20px;
+
+
+}
+

@@ -33,7 +33,7 @@ app.get('/activity/:id', eventController.activityDetailPageDisplay);
 app.post('/activity/:id/confirm', eventController.confirmParticipation);
 
 //Save event as a maybe to profile route
-app.post('/activity/:id/maybe', eventController.saveAsMaybe);
+app.post('/activity/:id/interested', eventController.saveAsInterested);
 
 //Submit chat text route
 app.post('/activity/:id/submit', eventController.submitChatText);
@@ -47,7 +47,8 @@ app.get('/profile/:id', eventController.viewProfile);
 
 //Create activity button route
 //Create activity + generate location
-app.post('/createactivity', eventController.createActivity, eventController.generateLatAndLong);
+//----------ADD eventController.generateLatAndLong
+app.post('/createactivity', eventController.createActivity);
 
 
 

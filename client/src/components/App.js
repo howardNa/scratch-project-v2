@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Main from '../containers/Main';
-import NavComponent from './NavComponent'
+
+import NavContainer from '../containers/NavContainer.js';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <NavComponent />
+          <NavContainer />
           <Main />
         </div>
       </Router>

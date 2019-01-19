@@ -1,0 +1,52 @@
+.log-in-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+
+}
+
+.log-in-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    border: 1px solid #DBCECE;
+    border-radius: 5px;
+}
+
+.username-row, .password-row{
+    display: flex;
+    flex-direction: row;
+}
+
+#username-field, #password-field, #first-name-input, #last-name-input, #birthdate-input, #image-input{
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 18px;
+    font-size: 15px;
+}
+
+.log-in-box p {
+    font-size: 20px;
+}
+
+#sign-in-button {
+    height: 40px;
+    width: 75px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 190px;
+    border-radius: 5px;
+}
+
+#sign-up-button {
+    height: 60px;
+    width: 60px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 180px;
+    border-radius: 5px;
+}

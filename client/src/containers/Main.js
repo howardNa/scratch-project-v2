@@ -17,7 +17,7 @@ const Main = (props) => {
           exact path='/'
           component={ActivitiesContainer}
         />
-        <Route
+         <Route
           exact path='/activity/:id'
           component={ViewContainer}
         />
@@ -29,7 +29,7 @@ const Main = (props) => {
           exact path='/create'
           component={CreateActivity}
         />
-    </Switch>
+    </Switch> 
       </div>
   )
 }

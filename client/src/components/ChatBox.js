@@ -8,19 +8,10 @@ const ChatBox = () => {
     <div className="chatbox-container">
         <h3>Chatbox</h3>
         <scroll-container id="chatbox">
-            {/* <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div>
-            <div>boom baaam messages hey hi wsup</div> */}
+            <div className="user-message"><strong>Howard: </strong>yo where are you guys</div>
+            <div className="user-message"><strong>Braden: </strong>im omw</div>
+            <div className="user-message"><strong>Carolyn: </strong>wait i can't find parking</div>
+
         </scroll-container>
 
         <div className="input-row">

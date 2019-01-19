@@ -18,7 +18,7 @@ const LogIn = () => {
             <input id="password-field"></input>
         </div>
 
-        <button id="sign-in-button">Sign in</button>
+        <button id="sign-in-button">Log in</button>
 
     </div>
 </div>

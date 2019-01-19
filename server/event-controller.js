@@ -6,42 +6,24 @@ const eventController = {};
 
 //---------- Welcome / Search Page Routes -------
 
-//----Search activities controller: 
-
-//SEARCH: Activities Table
-//SEARCH PARAMS: Activity type, location, start time, end time
-//RETURN and PRINT: Matching activities; data: Title, Location, Start Time, End Time, Description
-// RETURN FOR INTERNAL: User ID 
-
-
-// SEARCH: Users Table for creator
-// ~ SEARCH PARAMS: User id (from Activities Table Search)
-// ~ RETURN: Matching profile; Username + Photo
-
+//Search activities route app.post('/activities', eventController.activitySearch);
+//SEARCH: Activities Table by activity type
+//RETURNS TO CLIENT: Array of objects matching the searched type with the keys:
+//title, location_text, start_time, description, creator_id
 eventController.activitySearch = (req, res) => { 
   let title = req.body.title;
   let location = req.body.location;
   let start = req.body.start_time;
-  let end = req.body.end_time; 
-
-
-  let queryString = `SELECT title, location_text, start_time, end_time, description, creator_id FROM activities WHERE title iLIKE '%${title}%' AND start_time >= '${start}' AND end_time <= '${end}'`;
- // FROM users WHERE created < $1 AND active = $2'
- console.log(queryString);
-
+  let queryString = `SELECT title, location_text, start_time, description, creator_id FROM activities WHERE title iLIKE '%${title}%'`;
   db.any(queryString).then((data) => {
-    let dataObj = data;
-    let queryString2 = `SELECT username, imageurl FROM users WHERE user'%{}%`;
-    console.log(dataObj);
-
-    db.any(queryString2).then
-}).catch((err) => { res.send(err) });
+    res.status(200).json(data);
+  }).catch((err) => { res.send(err) });
 };
-
 
 //----Activity detail display route, accessable once search is populated
 
-//SEARCH: Activities Table
+//SEARCH: Activities Table by ActivityID
+let queryString 
 //SEARCH PARAMS: ActivityID 
 //RETURN and PRINT: Matching activities; data: Title, Location, Start Time, End Time, Description
 //RETURN: CreatorID + UserIDs
@@ -56,6 +38,8 @@ eventController.activitySearch = (req, res) => {
 
 eventController.activityDetailPageDisplay = (req, res) => {
   res.send("greetings from inside of the activityDetailPageDisplay search controller");
+
+
 };
 
 //---------- Activity Detail Page Routes ---------------
@@ -136,18 +120,14 @@ eventController.createActivity = (req, res) => {
   let location_lat = req.body.location_lat;
   let location_long = req.body.location_long;
   let start_time = req.body.start_time;
-  let end_time = req.body.end_time;
-  let creator_id = req.body.creator_id;
+  let creator_id = req.params.id;
 
-  //sign ups table??
 
-  let queryString = `INSERT INTO activities (timestamp, title, description, location_text, location_lat, location_long, start_time, end_time, creator_id) VALUES ('${timestamp}', '${title}', '${description}', '${location_text}', ${location_lat}, ${location_long}, '${start_time}', '${end_time}', ${creator_id})`;
-  console.log(queryString);
-  //($1, $2, $3, $4, $5, $6, $7, $8, $9)';
-  //[timestamp, title, description, location_text, location_lat, location_long, start_time, end_time, creator_id]
-  db.none(queryString)
-  .then(() => {
-      res.status(200).send('save successful!'); 
+  let queryString = `INSERT INTO activities (timestamp, title, description, location_text, location_lat, location_long, start_time, creator_id) VALUES ('${timestamp}', '${title}', '${description}', '${location_text}', ${location_lat}, ${location_long}, '${start_time}', ${creator_id}) RETURNING *`;
+  db.one(queryString)
+  .then((data) => {
+    console.log(data);
+      res.status(200).send(data); 
   })
   .catch(error => {
       res.status(400).send(error); 
@@ -202,10 +182,13 @@ eventController.createAccount = (req, res) => {
   let birthday = req.body.birthday;
   let imageurl = req.body.imageurl;
 
-  let string = 'INSERT INTO users (timestamp, username, password, first, last, birthday, imageurl) VALUES ($1, $2, $3, $4, $5, $6, $7)';
-  db.none(string, [timestamp, username, password, first, last, birthday, imageurl])
-  .then(() => {
-      res.status(200).send('save successful!'); // print new user id;
+  let queryString = `INSERT INTO users (timestamp, username, password, first, last, birthday, imageurl) VALUES ('${timestamp}', '${username}', '${password}', '${first}', '${last}', '${birthday}', '${imageurl}') RETURNING *`;
+  console.log(queryString)
+
+  db.one(queryString)
+  .then((data) => {
+    console.log(data);
+      res.status(200).send(data); 
   })
   .catch(error => {
       res.status(400).send(error); // print error;

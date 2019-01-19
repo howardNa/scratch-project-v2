@@ -51,6 +51,12 @@
     margin-bottom: 15px;
 }
 
+.additional-info-input {
+    height: 90px;
+    width: 230px;
+    margin-bottom: 20px;
+}
+
 .create-button {
     height: 40px;
     width: 80px;

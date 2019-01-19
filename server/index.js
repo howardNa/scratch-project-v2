@@ -33,7 +33,7 @@ app.get('/activity/:id', eventController.activityDetailPageDisplay);
 app.post('/activity/:id/confirm', eventController.confirmParticipation);
 
 //Save event as a maybe to profile route
-app.post('/activity/:id/maybe', eventController.saveAsMaybe);
+app.post('/activity/:id/interested', eventController.saveAsInterested);
 
 //Submit chat text route
 app.post('/activity/:id/submit', eventController.submitChatText);

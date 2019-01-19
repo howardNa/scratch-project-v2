@@ -13,16 +13,29 @@ const eventController = {};
 //RETURN and PRINT: Matching activities; data: Title, Location, Start Time, End Time, Description
 // RETURN FOR INTERNAL: User ID 
 
-// SEARCH: Users Table
+
+// SEARCH: Users Table for creator
 // ~ SEARCH PARAMS: User id (from Activities Table Search)
 // ~ RETURN: Matching profile; Username + Photo
 
 eventController.activitySearch = (req, res) => { 
-  
+  let title = req.body.title;
+  let location = req.body.location;
+  let start = req.body.start_time;
+  let end = req.body.end_time; 
 
 
+  let queryString = `SELECT title, location_text, start_time, end_time, description, creator_id FROM activities WHERE title iLIKE '%${title}%' AND start_time >= '${start}' AND end_time <= '${end}'`;
+ // FROM users WHERE created < $1 AND active = $2'
+ console.log(queryString);
 
-  res.send("greetings from inside of the activitySearch controller");
+  db.any(queryString).then((data) => {
+    let dataObj = data;
+    let queryString2 = `SELECT username, imageurl FROM users WHERE user'%{}%`;
+    console.log(dataObj);
+
+    db.any(queryString2).then
+}).catch((err) => { res.send(err) });
 };
 
 
@@ -60,10 +73,11 @@ eventController.confirmParticipation = (req, res) => {
 
   //CONFIRMED table elements to add
   let user_id  = req.body.user_id;
-  let activity = req.body.activity;
+  let activity_id = req.body.activity_id;
 
-  let string = 'INSERT INTO confirmed (user_id, activity) VALUES ($1, $2)';
-  db.none(string, [user_id, activity])
+  let queryString = `INSERT INTO confirmed (user_id, activity_id) VALUES (${user_id}, ${activity_id})`;
+  console.log(queryString);
+  db.none(queryString)
   .then(() => {
       res.status(200).send('save successful!'); 
   })
@@ -77,18 +91,19 @@ eventController.confirmParticipation = (req, res) => {
 //Controller for post requests to /activity/:id/maybe route
 //When user clicks submit, indicating they are maybe intereseted in participang in an activity  
 //this controller grabs the data and saves it to the INTERESTED table
-eventController.saveAsMaybe = (req, res) => {
+eventController.saveAsInterested = (req, res) => {
   let user_id  = req.body.user_id;
-  let activity = req.body.activity;
+  let activity_id = req.body.activity_id;
 
-  let string = 'INSERT INTO interested (user_id, activity) VALUES ($1, $2)';
-  db.none(string, [user_id, activity])
-  .then(() => {
-      res.status(200).send('save successful!'); 
-  })
-  .catch(error => {
-      res.status(400).send(error); 
-  });
+  console.log(user_id);
+  console.log(activity_id);
+
+  let queryString = `INSERT INTO interested (user_id, activity_id) VALUES (${user_id}, ${activity_id})`;
+  console.log(queryString);
+
+  db.none(queryString)
+    .then(() => { res.status(200).send('save successful!'); })
+    .catch(error => { res.status(400).send(error); });
 };
 
 //----Submit chat message
@@ -126,8 +141,11 @@ eventController.createActivity = (req, res) => {
 
   //sign ups table??
 
-  let string = 'INSERT INTO activities (timestamp, title, description, location_text, location_lat, location_long, start_time, end_time, creator_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)';
-  db.none(string, [timestamp, title, description, location_text, location_lat, location_long, start_time, end_time, creator_id])
+  let queryString = `INSERT INTO activities (timestamp, title, description, location_text, location_lat, location_long, start_time, end_time, creator_id) VALUES ('${timestamp}', '${title}', '${description}', '${location_text}', ${location_lat}, ${location_long}, '${start_time}', '${end_time}', ${creator_id})`;
+  console.log(queryString);
+  //($1, $2, $3, $4, $5, $6, $7, $8, $9)';
+  //[timestamp, title, description, location_text, location_lat, location_long, start_time, end_time, creator_id]
+  db.none(queryString)
   .then(() => {
       res.status(200).send('save successful!'); 
   })

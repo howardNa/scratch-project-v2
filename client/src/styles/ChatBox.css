@@ -29,3 +29,7 @@ scroll-container {
   #send-button {
       margin-left: 14px;
   }
+
+  .user-message {
+      margin-top: 10px;
+  }

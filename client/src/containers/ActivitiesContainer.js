@@ -1,40 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
 import SearchBoxComponent from '../components/SearchBox.js'
 import ActivitiesComponent from '../components/Activities.js'
 
+import * as actions from '../store/actions/actions.js'
+
 const mapStateToProps = store => ({
-
-  // lastMarketId: store.markets.lastMarketId,
-  // marketList: store.markets.marketList
-
+  searchActivities: store.activities.searchedActivities,
 
 });
 
 const mapDispatchToProps = dispatch => ({
   
-  // create functions that will dispatch action creators
-  // createMarket: (e) => {
-  //   console.log('e.target after clicking add market: ', e.target)
-  //   dispatch(actions.createMarket())
-  // },
+  searchActivity: (e) => {
+    dispatch(actions.searchActivity())
+  },
 
-  // setNewLocation: (e) => {
-  //   console.log('e.target after changing LOCATION: ', e.target)
-  //   dispatch(actions.setNewLocation(e.target.value))
-  // }
+  viewActivity: (e) => {
+    dispatch(actions.viewActivity())
+  }
 
 });
+class ActivitiesContainer extends Component {
+  constructor(props) {
+    super(props)
 
-const ActivitiesContainer = (props) => {
-  return (
-    <div>
-      <SearchBoxComponent />
-      <ActivitiesComponent />
-    </div>
-  )
+    this.searchActivities = this.searchActivities.bind(this)
+  } 
+
+  searchActivities() {
+    actions.searchActivity()
+  }
+
+  render() {
+    return (
+      <div>
+        <SearchBoxComponent searchActivitiesApiCall={this.searchActivities} />
+        <ActivitiesComponent searchActivitiesArray={this.props.searchActivities} />
+      </div>
+    )
+  }
 }
 
-export default withRouter(connect(null, null)(ActivitiesContainer));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ActivitiesContainer));

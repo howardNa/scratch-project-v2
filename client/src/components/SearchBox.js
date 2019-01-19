@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/SearchBox.css';
 
-const SearchBoxComponent = () => {
+const SearchBoxComponent = (props) => {
   return (
     <div className="main-search-bar-container">
         <div className="search-bar-flex-container">
@@ -17,7 +17,7 @@ const SearchBoxComponent = () => {
                     <input className="time-input"></input>
                 </div>
 
-            <button className="go-button">Go</button>
+            <button className="go-button" onClick={props.searchActivitiesApiCall} >Go</button>
         </div>
     </div>
     

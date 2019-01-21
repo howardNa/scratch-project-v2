@@ -1,27 +1,21 @@
 import * as types from '../actionTypes.js';
+import { apiCall } from '../../services/api';
 import axios from 'axios';
 
-
-export const searchActivity = (activity) => {
-    return dispatch => {
-        return apiCall('get', activity)
-            .then((response) => {
-                dispatch({
-                    type: types.SEARCH_ACTIVITY,
-                    payload: response
-                })
-            })
-            .catch(err => console.log(err))
-    }
+export const searchForActivities = (activityInfo) => {
+  return dispatch => {
+    return apiCall('post', 'http://localhost:8000/activities', {title: "hello"})
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err))
+  }
 }
 
-export const createActivity = (create) => {
-    return dispatch => {
-        return apiCall('post', '/createActivity', create)
-            .then((response) => {
-                console.log(response)
-            })
-    }
+export const createActivity = (activityInfo) => {
+  return dispatch => {
+    return apiCall('post', 'http://localhost:8000/createActivity', activityInfo)
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err))
+  }
 }
 
 export const viewActivity = (view) => ({
@@ -54,15 +48,3 @@ export const signUp = (signUp) => ({
     payload: signUp
 })
 
-function apiCall(method, path, data) {
-    return new Promise((resolve, reject) => {
-      return axios[method.toLowerCase()](path, data)
-        .then(res => {
-          return resolve(res.data);
-        })
-        .catch(err => {
-          console.log("Error in apiCall:", err);
-          return reject(err.response.data.error)
-        });
-    });
-  }

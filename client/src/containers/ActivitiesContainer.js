@@ -9,25 +9,18 @@ import SearchBoxComponent from '../components/SearchBox.js'
 import ActivitiesComponent from '../components/Activities.js'
 import MapContainer from './MapContainer.js'
 
-
 const mapStateToProps = store => ({
   searchActivities: store.activities.searchedActivities,
-  
 });
 
 const mapDispatchToProps = dispatch => ({
-  
-  searchActivity: (e) => {
-    dispatch(actions.searchActivity())
+  searchForActivities: (activity) => {
+    dispatch(actions.searchForActivities(activity))
   },
-
-  viewActivity: (e) => {
-    dispatch(actions.viewActivity())
+  getActivities: (e) => {
+    dispatch(actions.getActivities())
   }
-
 });
-
-
 
 class ActivitiesContainer extends Component {
   constructor(props) {
@@ -35,21 +28,33 @@ class ActivitiesContainer extends Component {
     this.state = {
       showMap: true,
       showList: false,
+      title: '',
     };
-    
-    this.searchActivities = this.searchActivities.bind(this)
-  } 
-  
-  searchActivities() {
-    actions.searchActivity()
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
-  
+  handleChange(e) {
+    e.preventDefault();
+    console.log(e.target.id);
+    const newState = this.state;
+    newState[e.target.id] = e.target.value;
+    this.setState(newState);
+  };
+
+  handleSearch() {
+    this.props.searchForActivities({title: this.state.title});
+  }
+
   render() {
     return (
       <div>
-      <SearchBoxComponent searchActivitiesApiCall={this.searchActivities} />
-      <MapContainer />
-      <ActivitiesComponent searchActivitiesArray={this.props.searchActivities} />
+        <SearchBoxComponent 
+          title={this.state.title}
+          handleChange={this.handleChange}
+          handleSearch={this.handleSearch} 
+        />
+        <MapContainer />
+        <ActivitiesComponent getActivities={this.props.getActivities} />
       </div>
     )
   };

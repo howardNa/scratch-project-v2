@@ -93,7 +93,7 @@ class MapContainer extends Component {
             >
               <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
                 <div style={{ fontSize: `12px`, fontColor: `#08233B` }}>
-                  <Link to="/moreInfo">More Info!!!</Link>
+                  <Link to="/activity/1">More Info!!!</Link>
                   <p>{item.name}</p>
                   <p>{item.activity}</p>
                   <p>{item.time}</p>

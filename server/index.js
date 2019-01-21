@@ -23,7 +23,7 @@ app.use(cors())
 app.post('/activities', eventController.activitySearch);
 
 //Activity detail display route, accessable once search is populated
-app.get('/activity/:id', eventController.activityDetailPageDisplay);
+app.get('/activity/:id', eventController.captureAndStoreActivityData, eventController.captureAndStoreCreatorData, eventController.captureAndStoreUserData, eventController.returnData)
 
 
 

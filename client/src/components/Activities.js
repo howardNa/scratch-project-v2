@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import SingleActivityItem from './SingleActivityItem';
 import '../styles/Activities.css';
 
-// will take in prop this.props.searchActivitiesArray
 const ActivitiesComponent = (props) => {
-  const foundActivities = props.searchActivitiesArray
+  const foundActivities = props.getActivities;
 
   const listActivities = []
 
@@ -15,10 +14,9 @@ const ActivitiesComponent = (props) => {
 
   return (
     <div className="activities-container">
-        <h3>Activities list</h3>
-        {listActivities}
+      <h3>Activities list</h3>
+      {listActivities}
     </div>
-    
   )
 }
 

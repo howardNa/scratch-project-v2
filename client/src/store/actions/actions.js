@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const searchForActivities = (activityInfo) => {
   return dispatch => {
-    return apiCall('post', 'http://localhost:8000/activities', {title: "hello"})
+    return apiCall('post', 'http://localhost:8000/activities', activityInfo)
       .then((response) => console.log(response))
       .catch((err) => console.log(err))
   }

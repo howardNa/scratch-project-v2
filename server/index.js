@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 
 
+
 //---------- Login Page Routes --------------------------
 
 //Create account button route
@@ -69,6 +70,7 @@ let connections = [];
 
 io.sockets.on("connection", function(socket){
   connections.push(socket);
+  socket.emit('send message', "hello world")
   console.log('Connected: %s sockets connected', connections.length);
 
   // Disconnect
@@ -78,8 +80,8 @@ io.sockets.on("connection", function(socket){
   })
 
   socket.on('send message', function(data){
-    console.log(data);
-    io.sockets.emit('new message', {message: data});
+    console.log("This is socket data:", data);
+    io.sockets.emit('send message', data);
   })
   
 })

@@ -6,25 +6,34 @@ const socket = openSocket('http://localhost:8000');
 
 
 document.addEventListener("DOMContentLoaded", function() { 
-    let socket = io.connect();
-    let messageForm = document.getElementById('messageForm')
-    let message = document.getElementById('message')
-    let chat = document.getElementById('chat')
-
-    messageForm.submit(function(e){
+    let socket = openSocket.connect();
+    document.getElementById('form_button').addEventListener('submit', function(e){
         e.preventDefault();
         console.log("Submitted");
-        socket.emit('send message', message.val());
-        message.val('');
+        socket.emit('send message', message.value);
+        message.value = '';
+        return false;
     })
+    let message = document.getElementById('message')
+    let chat = document.getElementById('chat')
+    
+    // messageForm.submit(function(e){
+    //     e.preventDefault();
+    //     console.log("Submitted");
+    //     socket.emit('send message', message.val());
+    //     message.val('');
+    //     return false;
+    // })
 
-    socket.on('new message', function(data){
-         chat.append(<div className='well'>+data.message+</div>)
+    socket.on('send message', function(data){
+        console.log("inside chat append: ", data)
+        chat.append(<div className='well'>+data.message+</div>)
     })
 
 });
 
 const ChatBox = () => {
+    
   return (
     <div className="chatbox-container">
 
@@ -32,7 +41,7 @@ const ChatBox = () => {
             <div className="col-md-4">
                 <div className="well">
 
-                <h3>Users</h3>
+                <h3>User Chat</h3>
                 <ul className="list-group" id="users"> </ul>
                 </div>
 
@@ -41,12 +50,17 @@ const ChatBox = () => {
 
                     <form id="messageForm">
                         <div className="form-group">
-
-                            <label>Enter Message</label>
-                            <textarea className="form-control" id="message"></textarea>
+                            <textarea className="form-control" id="message" placeholder="Message here"></textarea>
                             <br />
                             
-                            <input type="submit" classname="btn btn-primary" value="Send Message"></input>
+                            <input type="submit" onClick={function(e){
+                                let message = document.getElementById('message')
+                                console.log(message.value)
+        e.preventDefault();
+        console.log("Submitted");
+        socket.emit('send message', message.value);
+        message.value = '';
+    }} className="form_button" value="Send Message"></input>
                         
                         </div>
                     </form>

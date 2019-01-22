@@ -37,7 +37,6 @@ eventController.createAccount = (req, res) => {
 eventController.activitySearch = (req, res) => { 
   //##TO DO: add timestamp field to table and here based on where it comes from
   //let timestamp = req.timestamp; //double check where this is coming from
-  console.log("req1: ", req);
   let title = req.body.title;
   let location = req.body.location;
   let start = req.body.start_time;
@@ -47,7 +46,6 @@ eventController.activitySearch = (req, res) => {
   //##TO DO: add functionality to search by start_time and location, currently just grabbing, creator_id
   let queryString = `SELECT title, location_text, start_time, description FROM activities WHERE title iLIKE '%${title}%' ORDER BY start_time`;
   db.any(queryString).then((data) => {
-    console.log("data: ", data);
     //RESPOND TO CLIENT with Array of objects matching the criteria specified in search
     res.status(200).json(data); }).catch((err) => { res.send(err) });
 };

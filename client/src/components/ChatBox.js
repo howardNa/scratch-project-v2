@@ -1,26 +1,78 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import '../styles/ChatBox.css';
+import openSocket from 'socket.io-client';
+const socket = openSocket('http://localhost:8000');
+
+
+document.addEventListener("DOMContentLoaded", function() { 
+    let socket = openSocket.connect();
+    document.getElementById('form_button').addEventListener('submit', function(e){
+        e.preventDefault();
+        console.log("Submitted");
+        socket.emit('send message', message.value);
+        message.value = '';
+        return false;
+    })
+    let message = document.getElementById('message')
+    let chat = document.getElementById('chat')
+    
+    // messageForm.submit(function(e){
+    //     e.preventDefault();
+    //     console.log("Submitted");
+    //     socket.emit('send message', message.val());
+    //     message.val('');
+    //     return false;
+    // })
+
+    socket.on('send message', function(data){
+        console.log("inside chat append: ", data)
+        chat.append(<div className='well'>+data.message+</div>)
+    })
+
+});
 
 const ChatBox = () => {
+    
   return (
     <div className="chatbox-container">
-        <h3>Chatbox</h3>
-        <scroll-container id="chatbox">
-            <div className="user-message"><strong>Howard: </strong>yo where are you guys</div>
-            <div className="user-message"><strong>Braden: </strong>im omw</div>
-            <div className="user-message"><strong>Carolyn: </strong>wait i can't find parking</div>
 
-        </scroll-container>
+        <div className="row">
+            <div className="col-md-4">
+                <div className="well">
 
-        <div className="input-row">
-            <input id="message-field"></input>
-            <button id="send-button">Send</button>
+                <h3>User Chat</h3>
+                <ul className="list-group" id="users"> </ul>
+                </div>
+
+                <div className="col-md-8">
+                    <div className="chat" id="chat"></div>
+
+                    <form id="messageForm">
+                        <div className="form-group">
+                            <textarea className="form-control" id="message" placeholder="Message here"></textarea>
+                            <br />
+                            
+                            <input type="submit" onClick={function(e){
+                                let message = document.getElementById('message')
+                                console.log(message.value)
+        e.preventDefault();
+        console.log("Submitted");
+        socket.emit('send message', message.value);
+        message.value = '';
+    }} className="form_button" value="Send Message"></input>
+                        
+                        </div>
+                    </form>
+                
+                </div>
+            
+            </div>
+
         </div>
 
     </div>
-    
+
   )
 }
 

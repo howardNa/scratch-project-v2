@@ -8,12 +8,10 @@ const SearchBoxComponent = (props) => {
     <div className="main-search-bar-container">
       <div className="search-bar-flex-container">
         <h2>I want to ...</h2>
-        <input id="title" className="activity-input" value={props.title} onChange={props.handleChange}></input>
+        <input id="title" className="activity-input" value={props.title} onChange={props.handleChange} placeholder="Activity"></input>
         <h2>around</h2>
           <div className="time-row-container">
-            <input className="time-input"></input>
-            <h2 className="to-margin">to</h2>
-            <input className="time-input"></input>
+            <input type="time" className="time-input" placeholder="Time"></input>
           </div>
       <button className="go-button" onClick={props.handleSearch}>Go</button>
       </div>
@@ -22,3 +20,26 @@ const SearchBoxComponent = (props) => {
 }
 
 export default SearchBoxComponent;
+
+
+
+// return (
+//   <div className="main-search-bar-container">
+
+//     <div className="search-bar-flex-container">
+
+//       <h2>What activity do you want to create?</h2>
+//       <input className="activity-input" id={'activityInput'} onChange={this.handleChange} placeholder='Activity'></input>
+
+//       <h2>What time do you want to do it?</h2>
+//       <input type="time" className="time-input" id={'startTime'} onChange={this.handleChange} placeholder='Time' required></input>
+
+      
+//       <h2>Where do you want to do it?</h2>
+//       <input className="location-input" id={'locationInput'} onChange={this.handleChange} placeholder='Location' ></input>
+
+//       <p><i>Got any additional info? Enter it below!</i></p>
+//       <input className="additional-info-input" id={'additionalInfo'} onChange={this.handleChange} ></input>
+//       <button className="create-button" onClick={this.createActivity} >Create</button>
+    
+//     </div>

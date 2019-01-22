@@ -30,6 +30,15 @@ const Main = (props) => {
           exact path='/create'
           component={CreateActivity}
         />
+        <Route
+          exact path='/signup'
+          component={SignUp}
+        />
+        <Route
+          exact path='/login'
+          component={LogIn}
+        />
+        
     </Switch> 
       </div>
   )

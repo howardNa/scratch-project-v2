@@ -5,6 +5,7 @@ import axios from 'axios';
 export const searchForActivities = (activityInfo) => {
   return dispatch => {
     return apiCall('post', 'http://localhost:8000/activities', activityInfo)
+
       .then((response) => {
         dispatch({
             type: types.SEARCH_ACTIVITY,
@@ -12,6 +13,7 @@ export const searchForActivities = (activityInfo) => {
         })
         // console.log('logging list of searched activities from actions: ', response)
       })
+
       .catch((err) => console.log(err))
   }
 }

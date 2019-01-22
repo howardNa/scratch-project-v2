@@ -17,9 +17,13 @@ const mapDispatchToProps = dispatch => ({
   searchForActivities: (activity) => {
     dispatch(actions.searchForActivities(activity))
   },
-  getActivities: (e) => {
-    dispatch(actions.getActivities())
+
+  viewActivity: (e) => {
+    dispatch(actions.viewActivity(parseInt(e.target.id)))
   }
+  // getActivities: (e) => {
+  //   dispatch(actions.getActivities())
+  // }
 });
 
 class ActivitiesContainer extends Component {
@@ -35,7 +39,7 @@ class ActivitiesContainer extends Component {
   }
   handleChange(e) {
     e.preventDefault();
-    console.log(e.target.id);
+    // console.log(e.target.id);
     const newState = this.state;
     newState[e.target.id] = e.target.value;
     this.setState(newState);
@@ -54,7 +58,10 @@ class ActivitiesContainer extends Component {
           handleSearch={this.handleSearch} 
         />
         <MapContainer />
-        <ActivitiesComponent getActivities={this.props.getActivities} />
+        <ActivitiesComponent 
+          searchActivities={this.props.searchActivities} 
+          viewActivity={this.props.viewActivity}
+        />
       </div>
     )
   };

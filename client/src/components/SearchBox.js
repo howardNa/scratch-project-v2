@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/SearchBox.css';
 
 const SearchBoxComponent = (props) => {
-  console.log(props);
+  
   return (
     <div className="main-search-bar-container">
       <div className="search-bar-flex-container">

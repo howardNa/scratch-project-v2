@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 
 import '../styles/DetailsComponent.css';
 
-const DetailsComponent = () => {
+const DetailsComponent = (props) => {
+    console.log(props)
   return (
     <div className="details-container">
          <div className="activity-item-row">
 
             <div className="host-column">
                 <img className="host-img" src="../../build/images/stick-figure-dude.png"></img>
-                <h5 className="host-name">Tim</h5>
+                <h5 className="host-name">(Username goes here)</h5>
             </div>
 
             <div className="description-column">

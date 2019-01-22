@@ -7,12 +7,12 @@ import axios from 'axios';
 * @param {object} data (optional) data in JSON form for POST requests
 */
 
-console.log(axios);
+// console.log(axios);
 export function apiCall(method, path, data) {
   return new Promise((resolve, reject) => {
     return axios[method.toLowerCase()](path, data)
       .then(res => {
-        console.log(res);
+        console.log('logging res in apiCall function: ', res);
         return resolve(res.data);
       })
       .catch(err => {

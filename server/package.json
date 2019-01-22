@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Robert McHalffey, Byron Inocencio, Howard Na",
   "license": "ISC",
   "dependencies": {
+    "socket.io": "*",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",

@@ -1,26 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import '../styles/ChatBox.css';
+import openSocket from 'socket.io-client';
+const socket = openSocket('http://localhost:8000');
+
+
+document.addEventListener("DOMContentLoaded", function() { 
+    let socket = io.connect();
+    let messageForm = document.getElementById('messageForm')
+    let message = document.getElementById('message')
+    let chat = document.getElementById('chat')
+
+    messageForm.submit(function(e){
+        e.preventDefault();
+        console.log("Submitted");
+        socket.emit('send message', message.val());
+        message.val('');
+    })
+
+    socket.on('new message', function(data){
+         chat.append(<div className='well'>+data.message+</div>)
+    })
+
+});
 
 const ChatBox = () => {
   return (
     <div className="chatbox-container">
-        <h3>Chatbox</h3>
-        <scroll-container id="chatbox">
-            <div className="user-message"><strong>Howard: </strong>yo where are you guys</div>
-            <div className="user-message"><strong>Braden: </strong>im omw</div>
-            <div className="user-message"><strong>Carolyn: </strong>wait i can't find parking</div>
+        <div className="row">
+            <div className="col-md-4">
+                <div className="well">
 
-        </scroll-container>
+                <h3>Users</h3>
+                <ul className="list-group" id="users"> </ul>
+                </div>
 
-        <div className="input-row">
-            <input id="message-field"></input>
-            <button id="send-button">Send</button>
+                <div className="col-md-8">
+                    <div className="chat" id="chat"></div>
+
+                    <form id="messageForm">
+                        <div className="form-group">
+
+                            <label>Enter Message</label>
+                            <textarea className="form-control" id="message"></textarea>
+                            <br />
+                            
+                            <input type="submit" classname="btn btn-primary" value="Send Message"></input>
+                        
+                        </div>
+                    </form>
+                
+                </div>
+            
+            </div>
+
         </div>
 
     </div>
-    
+
   )
 }
 

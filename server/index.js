@@ -8,6 +8,8 @@ const server = http.createServer(app);
 const PORT = 8000;
 const db = require('./database');
 const eventController = require('./event-controller');
+const io = require('socket.io').listen(server);
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -55,6 +57,32 @@ app.post('/activity/:id/submit', eventController.submitChatText);
 app.get('/profile/:id', eventController.viewProfile);
 
 
+//---------- Chat Box Using Websockets ---------------
+
+
+let users = [];
+let connections = [];
+
+io.sockets.on("connection", function(socket){
+  connections.push(socket);
+  console.log('Connected: %s sockets connected', connections.length);
+
+  // Disconnect
+  socket.on('disconnect', function(data){
+    connections.splice(connections.indexOf(socket), 1);
+    console.log('Disconnected: %s sockets connected', connections.length )
+  })
+
+  socket.on('send message', function(data){
+    console.log(data);
+    io.sockets.emit('new message', {message: data});
+  })
+  
+})
+
+
+
+//---------- Server ---------------
 server.listen(PORT, () => {
   console.log(`Connected and listening on ${PORT}`);
 })

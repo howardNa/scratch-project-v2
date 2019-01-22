@@ -159,26 +159,26 @@ eventController.saveAsInterested = (req, res) => {
 //this controller grabs the data and saves it to the activities table
 eventController.createActivity = (req, res) => {
 
-  console.log("createActivity req now: ", req.body);
+  console.log("***The createActivity req body is: ", req.body);
   //add timestamp
   //let timestamp = req.body.timestamp;
-  let title = req.body.title;
-  let description = req.body.description;
-  let location_text = req.body.location_text;
+  let { title, description, location_text, start_time } = req.body;
+  console.log("***Destructuring: ", title, description, location_text, start_time);
+  console.log("***Type of start time: ", typeof start_time);
   //add lat and log
   //let location_lat = req.body.location_lat;
   //let location_long = req.body.location_long;
-  let start_time = req.body.start_time;
-  //let creator_id = req.params.id;
+  // let user = req.params.id;
 
   //add timestamp, location_lat, location_long, creator_id' + ${timestamp}', ${location_lat}, ${location_long}, , ${creator_id}
-  let queryString = `INSERT INTO activities (title, description, location_text, start_time) VALUES ('${title}', '${description}', '${location_text}', '${start_time}') RETURNING *`;
+  let queryString = `INSERT INTO activities(title, description, location_text, start_time) VALUES ($1, $2, $3, $4)`
+
   
   //##TODO: add to query: INSERT INTO confirmed (user_id, activity_id). activity id becomes available in this part. need client to submit userid with request
-  console.log(queryString);
-  db.one(queryString)
-  .then((data) => {  console.log(data);  res.status(200).json(data); })
-  .catch(error => { res.status(400).send(error); });
+  console.log("***The query string is: ", queryString);
+  db.one(queryString, [title, description, location_text, start_time])
+  .then((data) => {  console.log("Success!");  resolve(res.status(200).json(data)) })
+  .catch((error) => { console.log(error); res.status(400).send(error); });
 };
 
 //----------------------- UNDONE ROUTES 

@@ -6,6 +6,13 @@ import DetailsComponent from '../components/DetailsComponent.js';
 import GoingComponent from '../components/GoingComponent.js'
 import ChatBox from '../components/ChatBox.js';
 
+const mapStateToProps = store => ({
+  viewClickedActivity: store.activities.viewActivity,
+});
+
+const mapDispatchToProps = dispatch => ({
+
+});
 
 const ViewContainer = (props) => {
   console.log('here is props from viewContainer: ', props)
@@ -19,5 +26,6 @@ const ViewContainer = (props) => {
   
 }
 
-export default ViewContainer;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ViewContainer));
+
 

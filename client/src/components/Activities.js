@@ -19,6 +19,7 @@ const ActivitiesComponent = (props) => {
     let activity = foundActivities[i];
     listActivities.push(
       <SingleActivityItem 
+        viewActivityPage={props.viewActivityPage}
         viewActivity={props.viewActivity}
         title={activity.title} 
         location={activity.location_text} 

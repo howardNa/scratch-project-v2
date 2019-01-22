@@ -17,7 +17,10 @@ const SingleActivityItem = (props) => {
           <p className="description-item">{props.description}</p>
         </div>
         <button 
-          onClick={props.viewActivity} 
+          onClick={(e) => {
+            props.viewActivity(e)
+            props.viewActivityPage()
+          }} 
           id={props.id}
           className="details-button"
         >View</button>

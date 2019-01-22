@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const ChatBox = () => {
   return (
     <div className="chatbox-container">
+
         <div className="row">
             <div className="col-md-4">
                 <div className="well">

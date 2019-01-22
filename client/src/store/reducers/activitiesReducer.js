@@ -2,53 +2,33 @@ import * as types from '../actionTypes.js'
 
 const initialState = {
   searchedActivities: [],
+  viewActivity: {}
 }
 
 const activitiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SEARCH_ACTIVITY:
 
-    // const arr = [
-    //   {
-    //     name: "Braden",
-    //     activity: "tennis",
-    //     time: Date.now(),
-    //     where: "Venice, CA",
-    //     lat: 33.998885,
-    //     lng: -118.472386,
-    //     show: false,
-    //   },
-    //   {
-    //     name: "Carolyn",
-    //     activity: "massages",
-    //     time: Date.now(),
-    //     where: "Venice, CA",
-    //     lat: 33.997141,
-    //     lng: -118.461012,
-    //     show: false,
-    //   },
-    //   {
-    //     name: "Howard",
-    //     activity: "magic",
-    //     time: Date.now(),
-    //     where: "Venice, CA",
-    //     lat: 33.981093, 
-    //     lng: -118.460584,
-    //     show: false,
-    //   }
-    // ]
-
-    const newSearchedActivitiesArray = state.searchedActivities.slice()
+    const newState1 = {}
     const activitiesPayload = action.payload;
 
-    const newState = {}
-    newState.searchedActivities = newSearchedActivitiesArray
+    newState1.searchedActivities = activitiesPayload
 
-    for (let i = 0; i < activitiesPayload; i++) {
-      newSearchedActivitiesArray.push(activitiesPayload[i])
-    }
+    return newState1;
 
-    return newState;
+    case types.VIEW_ACTIVITY:
+
+    const newState2 = {}
+    const activityId = action.payload
+
+    newState2.viewActivity = state.searchedActivities[activityId]
+    newState2.searchedActivities = state.searchedActivities
+    console.log('clicked view button, and changed state, here is activity your interested in: ', newState2.viewActivity)
+
+    return newState2
+
+
+
 
     default:
       return state;

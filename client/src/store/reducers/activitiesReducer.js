@@ -2,7 +2,8 @@ import * as types from '../actionTypes.js'
 
 const initialState = {
   searchedActivities: [],
-  viewActivity: {}
+  viewActivity: {},
+  interestedInActivity: []
 }
 
 const activitiesReducer = (state = initialState, action) => {
@@ -13,6 +14,8 @@ const activitiesReducer = (state = initialState, action) => {
     const activitiesPayload = action.payload;
 
     newState1.searchedActivities = activitiesPayload
+    newState1.viewActivity = state.viewActivity
+    newState1.interestedInActivity = state.interestedInActivity
 
     return newState1;
 
@@ -23,9 +26,29 @@ const activitiesReducer = (state = initialState, action) => {
 
     newState2.viewActivity = state.searchedActivities[activityId]
     newState2.searchedActivities = state.searchedActivities
-    console.log('clicked view button, and changed state, here is activity your interested in: ', newState2.viewActivity)
+    newState2.interestedInActivity = state.interestedInActivity
 
-    return newState2
+    return newState2;
+
+    case types.INTERESTED_IN_ACTIVITY:
+
+    console.log('inside interestedInActivity reducer')
+    console.log('state with interestedInActivity', state)
+
+    const newState3 = {}
+
+    const interestedInActivityCopy = state.interestedInActivity.slice();
+    const addToInterested = state.viewActivity;
+    interestedInActivityCopy.push(addToInterested);
+
+    newState3.searchedActivities = state.searchedActivities;
+    newState3.viewActivity = state.viewActivity;
+    newState3.interestedInActivity = interestedInActivityCopy;
+
+    console.log('logging newState3: ', newState3)
+
+    return newState3;
+
 
 
 

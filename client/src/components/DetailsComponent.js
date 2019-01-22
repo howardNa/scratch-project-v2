@@ -22,7 +22,7 @@ const DetailsComponent = (props) => {
             </div>
 
             <div className="buttons-column">
-                <button className="button-item">Interested</button>
+                <button onClick={props.interestedInActivity} className="button-item">Interested</button>
                 <button className="button-item">Confirm</button>
             </div>
 

@@ -5,13 +5,22 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import UserProfile from '../components/UserProfile.js';
 import UserEventsComponent from '../components/UserEventsComponent.js';
 
+const mapStateToProps = store => ({
+  interestedInActivity: store.activities.interestedInActivity
+});
+
+const mapDispatchToProps = dispatch => ({
+
+
+});
+
 const UserEventsContainer = (props) => {
   return (
     <div>
       <UserProfile />
-      <UserEventsComponent />
+      <UserEventsComponent interestedInActivity={props.interestedInActivity} />
     </div>
   )
 }
 
-export default withRouter(connect(null, null)(UserEventsContainer));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserEventsContainer));

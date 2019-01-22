@@ -4,8 +4,14 @@ import axios from 'axios';
 
 export const searchForActivities = (activityInfo) => {
   return dispatch => {
-    return apiCall('post', 'http://localhost:8000/activities', {title: "hello"})
-      .then((response) => console.log(response))
+    return apiCall('post', 'http://localhost:8000/activities', activityInfo)
+      .then((response) => {
+        dispatch({
+            type: types.SEARCH_ACTIVITY,
+            payload: response
+        })
+        // console.log('logging list of searched activities from actions: ', response)
+      })
       .catch((err) => console.log(err))
   }
 }
@@ -18,9 +24,9 @@ export const createActivity = (activityInfo) => {
   }
 }
 
-export const viewActivity = (view) => ({
+export const viewActivity = (activityId) => ({
     type: types.VIEW_ACTIVITY,
-    payload: view
+    payload: activityId
 })
 
 export const interestedInActivity = (interested) => ({

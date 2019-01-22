@@ -20,6 +20,7 @@ db.proc('version')
     .catch(error => {
         console.log(error);
     });
+    
 // Exporting the database object for shared use:
 module.exports = db;
 

@@ -9,19 +9,8 @@ import CreateActivity from '../components/CreateActivity.js'
 import LogIn from '../components/LogIn.js'
 import SignUp from '../components/SignUp.js'
 
-const mapStateToProps = store => ({
-  viewClickedActivity: store.activities.viewActivity,
-});
-
-const mapDispatchToProps = dispatch => ({
-
-});
-
-
-//render={(props) => <Dashboard {...props} isAuthed={true} />}
-
 const Main = (props) => {
-  console.log('here are props from main page: ', props)
+  console.log('here are props.viewClickedActivity from main page: ', props.viewClickedActivity)
   return (
     <div>
       <Switch>
@@ -31,7 +20,6 @@ const Main = (props) => {
         />
          <Route
           exact path='/activity/:id'
-          render={(props) => <ViewContainer viewClickedActivity={props.viewClickedActivity} />}
           component={ViewContainer}
         />
         <Route
@@ -42,9 +30,18 @@ const Main = (props) => {
           exact path='/create'
           component={CreateActivity}
         />
+        <Route
+          exact path='/signup'
+          component={SignUp}
+        />
+        <Route
+          exact path='/login'
+          component={LogIn}
+        />
+        
     </Switch> 
       </div>
   )
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default withRouter(connect(null, null)(Main));

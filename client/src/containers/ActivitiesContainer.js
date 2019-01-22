@@ -36,10 +36,10 @@ class ActivitiesContainer extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.viewActivityPage = this.viewActivityPage.bind(this);
   }
   handleChange(e) {
     e.preventDefault();
-    // console.log(e.target.id);
     const newState = this.state;
     newState[e.target.id] = e.target.value;
     this.setState(newState);
@@ -47,6 +47,11 @@ class ActivitiesContainer extends Component {
 
   handleSearch() {
     this.props.searchForActivities({title: this.state.title});
+  }
+
+  viewActivityPage() {
+    this.props.history.push('/activity/:id');
+  
   }
 
   render() {
@@ -60,6 +65,7 @@ class ActivitiesContainer extends Component {
         <MapContainer />
         <ActivitiesComponent 
           searchActivities={this.props.searchActivities} 
+          viewActivityPage={this.viewActivityPage}
           viewActivity={this.props.viewActivity}
         />
       </div>

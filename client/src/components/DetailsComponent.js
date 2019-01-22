@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import '../styles/DetailsComponent.css';
 
 const DetailsComponent = (props) => {
-    console.log(props)
   return (
     <div className="details-container">
          <div className="activity-item-row">

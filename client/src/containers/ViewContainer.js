@@ -6,34 +6,18 @@ import DetailsComponent from '../components/DetailsComponent.js';
 import GoingComponent from '../components/GoingComponent.js'
 import ChatBox from '../components/ChatBox.js';
 
-const mapStateToProps = store => ({
-  viewClickedActivity: store.activities.viewActivity,
-});
 
-const mapDispatchToProps = dispatch => ({
-  // searchForActivities: (activity) => {
-  //   dispatch(actions.searchForActivities(activity))
-  // },
-
-  // viewActivity: (e) => {
-  //   dispatch(actions.viewActivity(parseInt(e.target.id)))
-  // }
-});
-
-class ViewContainer extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    console.log('logging viewClickedActivity: ', this.props.viewClickedActivity)
+const ViewContainer = (props) => {
+  console.log('here is props from viewContainer: ', props)
     return (
       <div>
-        <DetailsComponent viewClickedActivity={this.props.viewClickedActivity} />
+        <DetailsComponent viewClickedActivity={props.viewClickedActivity} />
         <GoingComponent />
         <ChatBox />
       </div>
     )
-  }
+  
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ViewContainer));
+export default ViewContainer;
+

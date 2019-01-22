@@ -8,6 +8,7 @@ const server = http.createServer(app);
 const PORT = 8000;
 const db = require('./database');
 const eventController = require('./event-controller');
+const path = require('path');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,6 +54,9 @@ app.post('/activity/:id/submit', eventController.submitChatText);
 
 //View event creator and attendee profile route
 app.get('/profile/:id', eventController.viewProfile);
+
+// '/' route' serve static html file
+app.use(express.static(path.resolve(__dirname, '../client')));
 
 
 server.listen(PORT, () => {

@@ -10,7 +10,7 @@ import LogIn from '../components/LogIn.js'
 import SignUp from '../components/SignUp.js'
 
 const Main = (props) => {
-  console.log('here are props.viewClickedActivity from main page: ', props.viewClickedActivity)
+
   return (
     <div>
       <Switch>

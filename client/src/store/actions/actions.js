@@ -11,7 +11,6 @@ export const searchForActivities = (activityInfo) => {
             type: types.SEARCH_ACTIVITY,
             payload: response
         })
-        // console.log('logging list of searched activities from actions: ', response)
       })
 
       .catch((err) => console.log(err))
@@ -39,6 +38,11 @@ export const interestedInActivity = (interested) => ({
 export const confirmActivity = (confirm) => ({
     type: types.CONFIRM_ACTIVITY,
     payload: confirm
+})
+
+export const deleteActivity = (activityId) => ({
+    type: types.DELETE_ACTIVITY,
+    payload: activityId
 })
 
 export const sendMessage = (send) => ({

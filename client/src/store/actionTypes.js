@@ -16,3 +16,5 @@ export const LOG_IN = "LOG_IN";
 
 //in 'sign in page'
 export const SIGN_UP = "SIGN_UP";
+
+export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';

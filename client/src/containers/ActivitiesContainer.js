@@ -21,9 +21,6 @@ const mapDispatchToProps = dispatch => ({
   viewActivity: (e) => {
     dispatch(actions.viewActivity(parseInt(e.target.id)))
   }
-  // getActivities: (e) => {
-  //   dispatch(actions.getActivities())
-  // }
 });
 
 class ActivitiesContainer extends Component {

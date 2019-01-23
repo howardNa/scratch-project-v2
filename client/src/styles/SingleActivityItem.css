@@ -25,7 +25,7 @@
 .description-column {
     margin-top: 20px;
     margin-left: 20px;
-    width: 450px;
+    width: 400px;
 }
 
 .description-item {
@@ -39,5 +39,14 @@
     font-size: 14px;
     margin-top: 35px;
     margin-left: 25px;
+    border-radius: 5px;
+}
+
+.delete-button {
+    height: 35px;
+    width: 30px;
+    font-size: 14px;
+    margin-top: 35px;
+    margin-left: 8px;
     border-radius: 5px;
 }

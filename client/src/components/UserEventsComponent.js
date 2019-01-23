@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import GoingPerson from './GoingPerson.js'
 import SingleActivityItemWithDelete from './SingleActivityItemWithDelete.js';
+import SingleActivityItemNotGoing from './SingleActivityItemNotGoing.js';
 import '../styles/UserEventsComponent.css';
 
 const UserEventsComponent = (props) => {
@@ -49,10 +50,10 @@ const UserEventsComponent = (props) => {
         let activity = confirmedActivityArr[i];
 
             listConfirmedActivities.push(
-                <SingleActivityItemWithDelete
+                <SingleActivityItemNotGoing
                     viewActivityPage={props.viewActivityPage}
                     viewActivity={props.viewActivity}
-                    deleteActivity={props.deleteActivity}
+                    notGoing={props.notGoing}
 
                     title={activity.title} 
                     location={activity.location_text} 

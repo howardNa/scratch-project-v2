@@ -4,7 +4,8 @@ const initialState = {
   searchedActivities: [],
   viewActivity: {},
   interestedInActivity: [],
-  confirmedActivity: []
+  confirmedActivity: [],
+  createdActivity: []
 }
 
 const activitiesReducer = (state = initialState, action) => {
@@ -18,6 +19,7 @@ const activitiesReducer = (state = initialState, action) => {
     newState1.viewActivity = state.viewActivity
     newState1.interestedInActivity = state.interestedInActivity
     newState1.confirmedActivity = state.confirmedActivity
+    newState1.createdActivity = state.createdActivity
 
     return newState1;
 
@@ -30,6 +32,7 @@ const activitiesReducer = (state = initialState, action) => {
     newState2.searchedActivities = state.searchedActivities
     newState2.interestedInActivity = state.interestedInActivity
     newState2.confirmedActivity = state.confirmedActivity
+    newState2.createdActivity = state.createdActivity
 
     return newState2;
 
@@ -56,6 +59,7 @@ const activitiesReducer = (state = initialState, action) => {
       newState3.viewActivity = state.viewActivity;
       newState3.interestedInActivity = interestedInActivityCopy;
       newState3.confirmedActivity = state.confirmedActivity
+      newState3.createdActivity = state.createdActivity
   
       return newState3;
 
@@ -90,6 +94,7 @@ const activitiesReducer = (state = initialState, action) => {
       newState4.viewActivity = state.viewActivity;
       newState4.interestedInActivity = state.interestedInActivity;
       newState4.confirmedActivity = confirmedActivityCopy;
+      newState4.createdActivity = state.createdActivity
 
       console.log('newState should have something in confirmed array: ', newState4)
   
@@ -100,29 +105,63 @@ const activitiesReducer = (state = initialState, action) => {
       return state;
     }
 
+    // case types.CREATE_ACTIVITY: 
+
+    // const newState6 = {};
+
+    // let userCreatedActivity = action.payload;
 
 
 
-    // case types.DELETE_ACTIVITY:
 
-    // const newState5 ={}
 
-    // const arr = state.interestedInActivity.slice()
 
-    // let deleteId = action.payload
 
-    // for (let i = 0; i < arr.length; i++) {
-    //   if (i === deleteId) {
-    //     arr.splice(i, 1)
-    //   }
-    // }
+    case types.DELETE_ACTIVITY:
 
-    // newState5.searchedActivities = state.searchedActivities;
-    // newState5.viewActivity = state.viewActivity;
-    // newState5.interestedInActivity = arr;
-    // newState5.confirmedActivity = state.confirmedActivity
+    const newState5 = {}
 
-    // return newState5;
+    const arr = state.interestedInActivity.slice()
+
+    let deleteId = action.payload
+
+    for (let i = 0; i < arr.length; i++) {
+      if (i === deleteId) {
+        arr.splice(i, 1)
+      }
+    }
+
+    newState5.searchedActivities = state.searchedActivities;
+    newState5.viewActivity = state.viewActivity;
+    newState5.interestedInActivity = arr;
+    newState5.confirmedActivity = state.confirmedActivity
+    newState5.createdActivity = state.createdActivity
+
+    return newState5;
+
+
+    case types.NOT_GOING:
+
+    console.log('inside not going reducer after clicking not going button')
+
+    const newState6 = {}
+
+    const newArr = state.confirmedActivity.slice();
+    let notGoingId = action.payload;
+
+    for (let i = 0; i < newArr.length; i ++) {
+      if (i === notGoingId) {
+        newArr.splice(i, 1)
+      }
+    }
+
+    newState6.searchedActivities = state.searchedActivities;
+    newState6.viewActivity = state.viewActivity;
+    newState6.interestedInActivity = state.interestedInActivity;
+    newState6.confirmedActivity = newArr;
+    newState6.createdActivity = state.createdActivity
+
+    return newState6;
 
 
 

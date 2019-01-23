@@ -25,6 +25,7 @@ passport.use(new GoogleStrategy({
   console.log(accessToken);
   console.log(refreshToken);
   console.log(profile);
+  console.log(cb);
 
   return cb(null, profile);
 }
@@ -72,9 +73,10 @@ app.get('/auth/google' ,passport.authenticate('google', {
   scope: ['profile', 'email']
 }))
 
-app.get('/auth/google/callback', passport.authenticate('google'), 
+app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), 
 function(req,res) {
   console.log('TRY REDIRECTING')
+  console.log('is there a user here: ',req.user.id);
   res.redirect('/');
 })
 
@@ -132,12 +134,10 @@ io.sockets.on("connection", function(socket){
 
   socket.on('send message', function(data){
     console.log("This is socket data:", data);
-    io.sockets.emit('send message', data);
+    io.sockets.emit('new message', data);
   })
   
 })
-
-
 
 //---------- Server ---------------
 server.listen(PORT, () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import GoingPerson from './GoingPerson.js'
-import SingleActivityItem from './SingleActivityItem';
+import SingleActivityItemWithDelete from './SingleActivityItemWithDelete.js';
 import '../styles/UserEventsComponent.css';
 
 const UserEventsComponent = (props) => {
@@ -21,7 +21,9 @@ const UserEventsComponent = (props) => {
         let activity = interestedInActivitiesArr[i];
 
         listInterestedActivities.push(
-            <SingleActivityItem 
+            <SingleActivityItemWithDelete
+            viewActivityPage={props.viewActivityPage}
+            viewActivity={props.viewActivity}
             title={activity.title} 
             location={activity.location_text} 
             start={activity.start_time} 
@@ -72,15 +74,15 @@ const UserEventsComponent = (props) => {
     <div className="user-events-container">
 
         <div className="user-events-list">
-
-            <div className="going-event">
-                <h3 className="event-status-header"><i>Going</i></h3>
-                <SingleActivityItem />
-            </div>
         
             <div className="created-event">
                 <h3 className="event-status-header"><i>Created</i></h3>
-                <SingleActivityItem />
+                <SingleActivityItemWithDelete />
+            </div>
+
+            <div className="going-event">
+                <h3 className="event-status-header"><i>Going</i></h3>
+                <SingleActivityItemWithDelete />
             </div>
 
             <div className="interested-event">

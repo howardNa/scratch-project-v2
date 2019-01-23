@@ -7,6 +7,8 @@ const socket = openSocket('http://localhost:8000');
 
 document.addEventListener("DOMContentLoaded", function() { 
     let socket = openSocket.connect();
+    let chat = document.getElementById('chat')
+
     document.getElementById('form_button').addEventListener('submit', function(e){
         e.preventDefault();
         console.log("Submitted");
@@ -15,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return false;
     })
     let message = document.getElementById('message')
-    let chat = document.getElementById('chat')
     
     // messageForm.submit(function(e){
     //     e.preventDefault();
@@ -25,12 +26,14 @@ document.addEventListener("DOMContentLoaded", function() {
     //     return false;
     // })
 
-    socket.on('send message', function(data){
-        console.log("inside chat append: ", data)
-        chat.append(<div className='well'>+data.message+</div>)
-    })
 
 });
+
+socket.on('new message', function(data){
+    console.log("inside chat append: ", data)
+    chat.innerHTML = data;
+})
+
 
 const ChatBox = () => {
     

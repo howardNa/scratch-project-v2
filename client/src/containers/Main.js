@@ -8,11 +8,13 @@ import UserEventsContainer from './UserEventsContainer.js'
 import CreateActivity from '../components/CreateActivity.js'
 import LogIn from '../components/LogIn.js'
 import SignUp from '../components/SignUp.js'
+import '../styles/Main.css';
+
 
 const Main = (props) => {
 
   return (
-    <div>
+    <div className="main">
       <Switch>
         <Route
           exact path='/'

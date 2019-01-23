@@ -6,7 +6,9 @@ const NavComponent = () => {
   return (
     <div className="navbar-flex">
       
-      <h1 className="nav-logo">Let's Go!</h1>
+      <img className="nav-logo" src="images/logo.png"></img>
+
+      {/* <h1 className="nav-logo">Let's Go!</h1> */}
 
         <div className='nav-links'>      
           <Link className="link" to="/">Activities</Link>

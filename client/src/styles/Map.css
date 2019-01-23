@@ -1,5 +1,7 @@
 .main-map-div {
     height: 50%;
     width: 50%;
+    min-width: 500px;
+    min-height: 500px;
     margin: auto;
 }

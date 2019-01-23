@@ -14,6 +14,17 @@
     font-size: 16px;
 }
 
+.chat-message {
+    font-size: 16px;
+    list-style-type: none; margin: 0; padding: 0; 
+    padding: 5px 10px; 
+}
+
+.chat-message:nth-child(odd) { 
+    background: lightgrey; 
+}
+
+
 /*
 
 scroll-container {
@@ -54,17 +65,5 @@ scroll-container {
 }
 
 
-
-#messages { 
-    list-style-type: none; margin: 0; padding: 0; 
-}
-
-#messages li { 
-    padding: 5px 10px; 
-}
-
-#messages li:nth-child(odd) { 
-    background: #eee; 
-}
 
 */

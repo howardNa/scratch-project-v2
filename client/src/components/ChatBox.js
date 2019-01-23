@@ -20,26 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
    
 
     let message = document.getElementById('message')
-    
-    // messageForm.submit(function(e){
-    //     e.preventDefault();
-    //     console.log("Submitted");
-    //     socket.emit('send message', message.val());
-    //     message.val('');
-    //     return false;
-    // })
-
-    // socket.on('send message', function(data){
-    //     console.log("inside chat append: ", data)
-    //     chat.append(<div className='well'>+data.message+</div>)
-    // })
 
 });
 
 
 socket.on('new message', function(data){
     console.log("inside chat append: ", data);
-    let node = document.createElement('DIV')
+    let node = document.createElement('LI');
+    node.setAttribute("class", "chat-message");
     // let textNode = document.createElement(data);
     node.innerHTML = data;
     // node.appendChild(textNode);
@@ -74,6 +62,7 @@ const ChatBox = () => {
                                     message.value = message.value.replace(/\r?\n/g, '<br />');
                                     socket.emit('send message', message.value);
                                     message.value = '';
+
                                 }
                             }}></textarea>
                             <br />

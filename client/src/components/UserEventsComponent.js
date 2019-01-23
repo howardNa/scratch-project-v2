@@ -11,6 +11,8 @@ const UserEventsComponent = (props) => {
 
     const listInterestedActivities = []
 
+    const listConfirmedActivities = []
+
       //random num generator for singleActivityItem key
     function randomNum() {
         let num = Math.floor(Math.random() * 100000)
@@ -20,22 +22,41 @@ const UserEventsComponent = (props) => {
     for (let i = 0; i < interestedInActivitiesArr.length; i++) {
         let activity = interestedInActivitiesArr[i];
 
-        listInterestedActivities.push(
-            <SingleActivityItemWithDelete
-            viewActivityPage={props.viewActivityPage}
-            viewActivity={props.viewActivity}
-            deleteActivity={props.deleteActivity}
+        if (activity.confirmed === true) {
+            listConfirmedActivities.push(
+                <SingleActivityItemWithDelete
+                    viewActivityPage={props.viewActivityPage}
+                    viewActivity={props.viewActivity}
+                    deleteActivity={props.deleteActivity}
 
-            title={activity.title} 
-            location={activity.location_text} 
-            start={activity.start_time} 
-            description={activity.description}
-            
-            id={i}
-            deleteObj={listInterestedActivities[i]}
-            key={randomNum() + i}
-            />
-        )
+                    title={activity.title} 
+                    location={activity.location_text} 
+                    start={activity.start_time} 
+                    description={activity.description}
+                    
+                    id={i}
+                    key={randomNum() + i}
+                />
+            )
+        }
+
+        if (activity.interested === true) {
+            listInterestedActivities.push(
+                <SingleActivityItemWithDelete
+                    viewActivityPage={props.viewActivityPage}
+                    viewActivity={props.viewActivity}
+                    deleteActivity={props.deleteActivity}
+        
+                    title={activity.title} 
+                    location={activity.location_text} 
+                    start={activity.start_time} 
+                    description={activity.description}
+                    
+                    id={i}
+                    key={randomNum() + i}
+                />
+            )
+        }
     }
 
   return (
@@ -50,7 +71,7 @@ const UserEventsComponent = (props) => {
 
             <div className="going-event">
                 <h3 className="event-status-header"><i>Going</i></h3>
-                <SingleActivityItemWithDelete />
+                {listConfirmedActivities}
             </div>
 
             <div className="interested-event">

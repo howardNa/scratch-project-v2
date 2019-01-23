@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/SingleActivityItem.css';
 
 const SingleActivityItemWithDelete = (props) => {
-    console.log('here are props from single activity: ', props)
+
   return (
     <div className="activity-item-container">
       <div className="activity-item-row">

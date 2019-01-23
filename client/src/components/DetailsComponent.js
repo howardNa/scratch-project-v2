@@ -23,7 +23,7 @@ const DetailsComponent = (props) => {
 
             <div className="buttons-column">
                 <button onClick={props.interestedInActivity} className="button-item">Interested</button>
-                <button className="button-item">Confirm</button>
+                <button onClick={props.confirmActivity} className="button-item">Confirm</button>
             </div>
 
         </div>

@@ -19,12 +19,8 @@ const mapDispatchToProps = dispatch => ({
   },
 
   viewActivity: (e) => {
-    console.log('logging e.target when clicking view button', e.target)
     dispatch(actions.viewActivity(parseInt(e.target.id)))
   }
-  // getActivities: (e) => {
-  //   dispatch(actions.getActivities())
-  // }
 });
 
 class ActivitiesContainer extends Component {

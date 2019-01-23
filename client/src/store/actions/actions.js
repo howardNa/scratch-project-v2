@@ -11,7 +11,6 @@ export const searchForActivities = (activityInfo) => {
             type: types.SEARCH_ACTIVITY,
             payload: response
         })
-        // console.log('logging list of searched activities from actions: ', response)
       })
 
       .catch((err) => console.log(err))

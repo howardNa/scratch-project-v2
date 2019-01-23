@@ -14,16 +14,19 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   interestedInActivity: (e) => {
     dispatch(actions.interestedInActivity(e.target))
+  },
+  confirmActivity: (e) => {
+    dispatch(actions.confirmActivity(e.target))
   }
 });
 
 const ViewContainer = (props) => {
-  console.log('here is props from viewContainer: ', props)
     return (
       <div>
         <DetailsComponent 
           viewClickedActivity={props.viewClickedActivity} 
           interestedInActivity={props.interestedInActivity}
+          confirmActivity={props.confirmActivity}
           />
         <GoingComponent />
         <ChatBox />

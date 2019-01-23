@@ -41,13 +41,13 @@ const activitiesReducer = (state = initialState, action) => {
     
 
     for (let i = 0; i < interestedInActivityCopy.length; i++) {
-      if (JSON.stringify(interestedInActivityCopy[i]) === JSON.stringify(addToInterested)) {
+      if (JSON.stringify(interestedInActivityCopy[i]) === JSON.stringify(addToInterested) && addToInterested.interested === true) {
         alreadyInterested = true;
-        addToInterested.interested = true;
       }
     }
 
     if (!alreadyInterested) {
+      addToInterested.interested = true;
       interestedInActivityCopy.push(addToInterested);
       newState3.searchedActivities = state.searchedActivities;
       newState3.viewActivity = state.viewActivity;
@@ -60,11 +60,29 @@ const activitiesReducer = (state = initialState, action) => {
       return state;
     }
 
-    // case types.DELETE_ACTIVITY:
+  //   case types.CONFIRM_ACTIVITY:
 
-    // const newState4 ={}
-    // let found = false;
 
+
+    case types.DELETE_ACTIVITY:
+
+    const newState5 ={}
+
+    const arr = state.interestedInActivity.slice()
+
+    let deleteId = action.payload
+
+    for (let i = 0; i < arr.length; i++) {
+      if (i === deleteId) {
+        arr.splice(i, 1)
+      }
+    }
+
+    newState5.searchedActivities = state.searchedActivities;
+    newState5.viewActivity = state.viewActivity;
+    newState5.interestedInActivity = arr;
+
+    return newState5;
 
 
 

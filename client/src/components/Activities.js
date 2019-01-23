@@ -5,7 +5,6 @@ import '../styles/Activities.css';
 
 const ActivitiesComponent = (props) => {
   const foundActivities = props.searchActivities;
-  console.log('logging foundActivities: ', foundActivities)
 
   const listActivities = []
 

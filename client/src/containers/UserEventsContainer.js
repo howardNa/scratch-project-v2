@@ -17,27 +17,10 @@ const mapDispatchToProps = dispatch => ({
   },
 
   deleteActivity: (e) => {
-    console.log('logging e.target after clicking delete: ', e.target)
-    // dispatch(actions.deleteActivity(e.target.id))
+    dispatch(actions.deleteActivity(parseInt(e.target.id)))
   }
 
 });
-
-/*
-class ActivitiesContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showMap: true,
-      showList: false,
-      title: '',
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-    this.viewActivityPage = this.viewActivityPage.bind(this);
-  }
-*/
-
 
 class UserEventsContainer extends Component {
 
@@ -67,73 +50,3 @@ class UserEventsContainer extends Component {
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserEventsContainer));
-
-
-/*
-const mapStateToProps = store => ({
-  searchActivities: store.activities.searchedActivities,
-});
-
-const mapDispatchToProps = dispatch => ({
-  searchForActivities: (activity) => {
-    dispatch(actions.searchForActivities(activity))
-  },
-
-  viewActivity: (e) => {
-    console.log('logging e.target when clicking view button', e.target)
-    dispatch(actions.viewActivity(parseInt(e.target.id)))
-  }
-  // getActivities: (e) => {
-  //   dispatch(actions.getActivities())
-  // }
-});
-
-class ActivitiesContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showMap: true,
-      showList: false,
-      title: '',
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-    this.viewActivityPage = this.viewActivityPage.bind(this);
-  }
-  handleChange(e) {
-    e.preventDefault();
-    const newState = this.state;
-    newState[e.target.id] = e.target.value;
-    this.setState(newState);
-  };
-
-  handleSearch() {
-    this.props.searchForActivities({title: this.state.title});
-  }
-
-  viewActivityPage() {
-    this.props.history.push('/activity/:id');
-  
-  }
-
-  render() {
-    return (
-      <div>
-        <SearchBoxComponent 
-          title={this.state.title}
-          handleChange={this.handleChange}
-          handleSearch={this.handleSearch} 
-        />
-        <MapContainer />
-        <ActivitiesComponent 
-          searchActivities={this.props.searchActivities} 
-          viewActivityPage={this.viewActivityPage}
-          viewActivity={this.props.viewActivity}
-        />
-      </div>
-    )
-  };
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ActivitiesContainer));
-*/

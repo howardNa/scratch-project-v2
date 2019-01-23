@@ -8,6 +8,8 @@ const server = http.createServer(app);
 const PORT = 8000;
 const db = require('./database');
 const eventController = require('./event-controller');
+const io = require('socket.io').listen(server);
+
 const path = require('path');
 require('dotenv').config();
 
@@ -53,6 +55,7 @@ app.use(cors())
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 
 
@@ -110,6 +113,33 @@ app.get('/profile/:id', eventController.viewProfile);
 app.use(express.static(path.resolve(__dirname, '../client')));
 
 
+//---------- Chat Box Using Websockets ---------------
+
+
+let users = [];
+let connections = [];
+
+io.sockets.on("connection", function(socket){
+  connections.push(socket);
+  socket.emit('send message', "hello world")
+  console.log('Connected: %s sockets connected', connections.length);
+
+  // Disconnect
+  socket.on('disconnect', function(data){
+    connections.splice(connections.indexOf(socket), 1);
+    console.log('Disconnected: %s sockets connected', connections.length )
+  })
+
+  socket.on('send message', function(data){
+    console.log("This is socket data:", data);
+    io.sockets.emit('new message', data);
+  })
+  
+})
+
+
+
+//---------- Server ---------------
 server.listen(PORT, () => {
   console.log(`Connected and listening on ${PORT}`);
 })

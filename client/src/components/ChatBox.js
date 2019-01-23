@@ -6,31 +6,15 @@ const socket = openSocket('http://localhost:8000');
 
 
 document.addEventListener("DOMContentLoaded", function() { 
-    let socket = io.connect();
     let chat = document.getElementById('chat')
-
-    if(e){
-        document.getElementById('form_button').addEventListener('submit', function(e){
-            e.preventDefault();
-            console.log("Top Submitted");
-            socket.emit('send message', message.value);
-            message.value = '';
-        });
-    }
-   
-
     let message = document.getElementById('message')
-
 });
-
 
 socket.on('new message', function(data){
     console.log("inside chat append: ", data);
     let node = document.createElement('LI');
     node.setAttribute("class", "chat-message");
-    // let textNode = document.createElement(data);
     node.innerHTML = data;
-    // node.appendChild(textNode);
     chat.appendChild(node);
 })
 
@@ -66,15 +50,6 @@ const ChatBox = () => {
                                 }
                             }}></textarea>
                             <br />
-                            
-                            {/* <input type="submit" onClick={function(e){
-                                let message = document.getElementById('message')
-                                console.log(message.value)
-                                e.preventDefault();
-                                console.log("Bottom Submitted");
-                                socket.emit('send message', message.value);
-                                message.value = '';
-                            }} className="form_button" value="Send Message"></input> */}
                         
                         </div>
                     </form>

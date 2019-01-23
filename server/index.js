@@ -25,6 +25,11 @@ passport.use(new GoogleStrategy({
   console.log(accessToken);
   console.log(refreshToken);
   console.log(profile);
+  console.log(cb);
+
+
+  //check if user exists on the databse
+
 
   return cb(null, profile);
 }
@@ -72,12 +77,20 @@ app.get('/auth/google' ,passport.authenticate('google', {
   scope: ['profile', 'email']
 }))
 
-app.get('/auth/google/callback', passport.authenticate('google'), 
+app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), eventController.login, 
 function(req,res) {
   console.log('TRY REDIRECTING')
+  console.log('is there a user here: ',req.user.id);
   res.redirect('/');
 })
 
+
+app.post('/createUser', eventController.createAccount, (req,res) => {
+
+  console.log('USER CREATED');
+  res.redirect('/');
+
+})
 //---------- Create Activity Page Route -----------------
 
 //Create activity button route
@@ -135,8 +148,6 @@ io.sockets.on("connection", function(socket){
   })
   
 })
-
-
 
 //---------- Server ---------------
 server.listen(PORT, () => {

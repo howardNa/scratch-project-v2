@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ChatBox.css';
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:8000');
+const socket = openSocket('http://192.168.0.224:8000');
 
 
 document.addEventListener("DOMContentLoaded", function() { 

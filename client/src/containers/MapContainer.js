@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { withGoogleMap, GoogleMap, Marker, withScriptjs } from "react-google-maps"
 import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox";
-
+import '../styles/Map.css';
 import { Link } from 'react-router-dom';
 
 class MapContainer extends Component {
@@ -118,7 +118,7 @@ class MapContainer extends Component {
 
     ))
     return (
-      <div>
+      <div className="main-map-div">
         <MyMapComponent
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQf8XQCVMQeOGULPg_YWjgxR25M6I-0u8&v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
@@ -126,8 +126,6 @@ class MapContainer extends Component {
           mapElement={<div style={{ height: `100%` }} />}
           isMarkerShown={true}
         />
-        <h1>Latitude: {this.state.latitude}</h1>
-        <h2>Longitude: {this.state.longitude}</h2>
       </div>
     )
   }

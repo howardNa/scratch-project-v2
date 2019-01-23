@@ -7,7 +7,9 @@ import UserProfile from '../components/UserProfile.js';
 import UserEventsComponent from '../components/UserEventsComponent.js';
 
 const mapStateToProps = store => ({
-  interestedInActivity: store.activities.interestedInActivity
+  interestedInActivity: store.activities.interestedInActivity,
+  confirmedActivity: store.activities.confirmedActivity,
+  createdActivity: store.activities.createdActivity
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -18,6 +20,14 @@ const mapDispatchToProps = dispatch => ({
 
   deleteActivity: (e) => {
     dispatch(actions.deleteActivity(parseInt(e.target.id)))
+  },
+
+  notGoing: (e) => {
+    dispatch(actions.notGoing(parseInt(e.target.id)))
+  },
+
+  unhostActivity: (e) => {
+    dispatch(actions.unhostActivity(parseInt(e.target.id)))
   }
 
 });
@@ -39,10 +49,14 @@ class UserEventsContainer extends Component {
       <div>
         <UserProfile />
         <UserEventsComponent 
+          createdActivity={this.props.createdActivity}
+          confirmedActivity={this.props.confirmedActivity}
           interestedInActivity={this.props.interestedInActivity} 
           viewActivityPage={this.viewActivityPage}
           viewActivity={this.props.viewActivity}
           deleteActivity={this.props.deleteActivity}
+          notGoing={this.props.notGoing}
+          unhostActivity={this.props.unhostActivity}
         />
       </div>
     )

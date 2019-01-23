@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/SingleActivityItem.css';
 
-const SingleActivityItemWithDelete = (props) => {
+const SingleActivityItemUnhost = (props) => {
 
   return (
     <div className="activity-item-container">
@@ -27,8 +27,7 @@ const SingleActivityItemWithDelete = (props) => {
           className="details-button"
         >View</button>
 
-
-        <button onClick={props.deleteActivity} id={props.id} className="delete-button">-</button>
+        <button onClick={props.unhostActivity} id={props.id} className="unhost-button"><i>Cancel</i></button>
 
 
       </div>
@@ -36,4 +35,4 @@ const SingleActivityItemWithDelete = (props) => {
   )
 }
 
-export default SingleActivityItemWithDelete;
+export default SingleActivityItemUnhost;

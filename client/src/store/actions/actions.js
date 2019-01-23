@@ -41,6 +41,11 @@ export const confirmActivity = (confirm) => ({
     payload: confirm
 })
 
+export const deleteActivity = (activityId) => ({
+    type: types.DELETE_ACTIVITY,
+    payload: activityId
+})
+
 export const sendMessage = (send) => ({
     type: types.SEND_MESSAGE,
     payload: send

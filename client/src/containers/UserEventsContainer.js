@@ -11,8 +11,14 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+
   viewActivity: (e) => {
     dispatch(actions.viewActivity(parseInt(e.target.id)))
+  },
+
+  deleteActivity: (e) => {
+    console.log('logging e.target after clicking delete: ', e.target)
+    // dispatch(actions.deleteActivity(e.target.id))
   }
 
 });
@@ -53,6 +59,7 @@ class UserEventsContainer extends Component {
           interestedInActivity={this.props.interestedInActivity} 
           viewActivityPage={this.viewActivityPage}
           viewActivity={this.props.viewActivity}
+          deleteActivity={this.props.deleteActivity}
         />
       </div>
     )

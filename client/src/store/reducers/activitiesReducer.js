@@ -32,22 +32,42 @@ const activitiesReducer = (state = initialState, action) => {
 
     case types.INTERESTED_IN_ACTIVITY:
 
-    console.log('inside interestedInActivity reducer')
-    console.log('state with interestedInActivity', state)
-
     const newState3 = {}
 
     const interestedInActivityCopy = state.interestedInActivity.slice();
     const addToInterested = state.viewActivity;
-    interestedInActivityCopy.push(addToInterested);
 
-    newState3.searchedActivities = state.searchedActivities;
-    newState3.viewActivity = state.viewActivity;
-    newState3.interestedInActivity = interestedInActivityCopy;
+    let alreadyInterested = false;
+    
 
-    console.log('logging newState3: ', newState3)
+    for (let i = 0; i < interestedInActivityCopy.length; i++) {
+      if (JSON.stringify(interestedInActivityCopy[i]) === JSON.stringify(addToInterested)) {
+        alreadyInterested = true;
+        addToInterested.interested = true;
+      }
+    }
 
-    return newState3;
+    if (!alreadyInterested) {
+      interestedInActivityCopy.push(addToInterested);
+      newState3.searchedActivities = state.searchedActivities;
+      newState3.viewActivity = state.viewActivity;
+      newState3.interestedInActivity = interestedInActivityCopy;
+  
+      return newState3;
+
+    } else {
+
+      return state;
+    }
+
+    // case types.DELETE_ACTIVITY:
+
+    // const newState4 ={}
+    // let found = false;
+
+
+
+
 
 
 

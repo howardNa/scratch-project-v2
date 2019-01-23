@@ -79,4 +79,4 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-.DS_STORE
+.DS_Store

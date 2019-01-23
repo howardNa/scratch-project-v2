@@ -8,24 +8,25 @@ const eventController = {};
 //------------- Create account button route ------------
 
 //Add submitted user data to USER table
-eventController.createAccount = (req, res) => { 
+eventController.createAccount = (req, res, next) => { 
 
   const salt = bcrypt.genSaltSync(10);
   //##TO DO: add timestamp field to table and here based on where it comes from
   //let timestamp = req.timestamp; //double check where this is coming from
 
 
-  let username, password, first, last, birthday, user_id, registration_origin, email;
+  let username, password, first, last, birthday, user_id, registration_origin, email, imageurl;
 
-  if(req.user.id){
+  if(req.user){
     registration_origin = 'google';
     user_id = req.user.id;
     username = req.user.displayName;
     first = req.user.name.givenName;
     last = req.user.name.familyName;
-    email = req.user.emails[0];
+    email = req.user.emails[0].value;
     birthday = '1990-01-01';
     password = bcrypt.hashSync(req.user.id);
+    imageurl = req.user.photos[0].value;
   }
 
   else{
@@ -37,17 +38,18 @@ eventController.createAccount = (req, res) => {
     password = bcrypt.hashSync(req.body.password,salt);
     email = req.body.email;
     username = req.body.username;
+    imageurl = req.body.imageurl
   }
 
-  let values = [user_id, username, password, first, last, birthday, email, registration_origin];
+  let values = [user_id, username, password, first, last, birthday, email, registration_origin, imageurl];
   console.log(values);
 
 
   //add timestamp, imageurl
-  let queryString = 'INSERT INTO users (users_id, username, password, first, last, birthday, email, registration_origin) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);'
-  // db.one(queryString, [req.users])
-  // .then((data) => { res.status(200).json(data); })
-  // .catch(error => { res.status(400).send(error); });
+  let queryString = 'INSERT INTO users (users_id, username, password, first, last, birthday, email, registration_origin,imageurl) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *;'
+   db.one(queryString,values)
+   .then((data) => { res.status(200).send(data) })
+   .catch(error => { res.status(400).send(error); });
 };
 
 //## TO DO:
@@ -247,7 +249,7 @@ eventController.login = (req, res, next) => {
   .then((data) => { 
     console.log('here is your data:', data);  next(); 
   })
-  .catch(error => res.redirect('/'));
+  .catch(error => eventController.createAccount(req,res,next));
 
 };
 

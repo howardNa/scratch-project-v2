@@ -84,6 +84,13 @@ function(req,res) {
   res.redirect('/');
 })
 
+
+app.post('/createUser', eventController.createAccount, (req,res) => {
+
+  console.log('USER CREATED');
+  res.redirect('/');
+
+})
 //---------- Create Activity Page Route -----------------
 
 //Create activity button route

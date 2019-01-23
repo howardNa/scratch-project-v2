@@ -11,9 +11,7 @@ export const searchForActivities = (activityInfo) => {
             type: types.SEARCH_ACTIVITY,
             payload: response
         })
-        // console.log('logging list of searched activities from actions: ', response)
       })
-
       .catch((err) => console.log(err))
   }
 }
@@ -21,7 +19,12 @@ export const searchForActivities = (activityInfo) => {
 export const createActivity = (activityInfo) => {
   return dispatch => {
     return apiCall('post', 'http://localhost:8000/createActivity', activityInfo)
-      .then((response) => console.log(response))
+      .then((response) => {
+          dispatch({
+              type: types.CREATE_ACTIVITY,
+              payload: response
+          })
+      })
       .catch((err) => console.log(err))
   }
 }
@@ -39,6 +42,21 @@ export const interestedInActivity = (interested) => ({
 export const confirmActivity = (confirm) => ({
     type: types.CONFIRM_ACTIVITY,
     payload: confirm
+})
+
+export const deleteActivity = (activityId) => ({
+    type: types.DELETE_ACTIVITY,
+    payload: activityId
+})
+
+export const notGoing = (activityId) => ({
+    type: types.NOT_GOING,
+    payload: activityId
+})
+
+export const unhostActivity = (activityId) => ({
+    type: types.UNHOST_ACTIVITY,
+    payload: activityId
 })
 
 export const sendMessage = (send) => ({

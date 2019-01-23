@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/SingleActivityItem.css';
 
-const SingleActivityItem = (props) => {
+const SingleActivityItemWithDelete = (props) => {
+
   return (
     <div className="activity-item-container">
       <div className="activity-item-row">
@@ -16,6 +17,7 @@ const SingleActivityItem = (props) => {
           <h4 className="description-item"><i>{props.start}</i></h4>
           <p className="description-item">{props.description}</p>
         </div>
+
         <button 
           onClick={(e) => {
             props.viewActivity(e)
@@ -24,9 +26,14 @@ const SingleActivityItem = (props) => {
           id={props.id}
           className="details-button"
         >View</button>
+
+
+        <button onClick={props.deleteActivity} id={props.id} className="delete-button">-</button>
+
+
       </div>
     </div>
   )
 }
 
-export default SingleActivityItem;
+export default SingleActivityItemWithDelete;

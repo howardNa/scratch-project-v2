@@ -28,7 +28,7 @@ const SingleActivityItemWithDelete = (props) => {
         >View</button>
 
 
-        <button onClick={props.deleteActivity} id={props.id} className="delete-button">X</button>
+        <button onClick={props.deleteActivity} id={props.id} className="delete-button">-</button>
 
 
       </div>

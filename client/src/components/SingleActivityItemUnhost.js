@@ -27,8 +27,7 @@ const SingleActivityItemUnhost = (props) => {
           className="details-button"
         >View</button>
 
-
-        <button onClick={props.unhostActivity} id={props.id} className="delete-button">X</button>
+        <button onClick={props.unhostActivity} id={props.id} className="unhost-button"><i>Cancel</i></button>
 
 
       </div>

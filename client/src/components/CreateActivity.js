@@ -12,10 +12,12 @@ const mapStateToProps = store => ({
   // lastMarketId: store.markets.lastMarketId,
   // marketList: store.markets.marketList
   searchActivities: store.activities.searchedActivities,
+  createdActivity: store.activities.createdActivity
 });
   
 const mapDispatchToProps = dispatch => ({
   createActivity: (activityInfo) => {
+      console.log('here is activityInfo in map dispatch: ', activityInfo)
       dispatch(actions.createActivity(activityInfo))
   }
 });

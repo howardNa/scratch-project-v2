@@ -7,7 +7,8 @@ import UserProfile from '../components/UserProfile.js';
 import UserEventsComponent from '../components/UserEventsComponent.js';
 
 const mapStateToProps = store => ({
-  interestedInActivity: store.activities.interestedInActivity
+  interestedInActivity: store.activities.interestedInActivity,
+  confirmedActivity: store.activities.confirmedActivity
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -39,6 +40,7 @@ class UserEventsContainer extends Component {
       <div>
         <UserProfile />
         <UserEventsComponent 
+          confirmedActivity={this.props.confirmedActivity}
           interestedInActivity={this.props.interestedInActivity} 
           viewActivityPage={this.viewActivityPage}
           viewActivity={this.props.viewActivity}

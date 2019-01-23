@@ -9,6 +9,10 @@ const UserEventsComponent = (props) => {
 
     const interestedInActivitiesArr = props.interestedInActivity;
 
+    const confirmedActivityArr = props.confirmedActivity;
+
+    console.log('logging confirmed arr: ', confirmedActivityArr)
+
     const listInterestedActivities = []
 
     const listConfirmedActivities = []
@@ -19,10 +23,31 @@ const UserEventsComponent = (props) => {
         return num;
     }
 
+    //interested acts
     for (let i = 0; i < interestedInActivitiesArr.length; i++) {
         let activity = interestedInActivitiesArr[i];
 
-        if (activity.confirmed === true) {
+            listInterestedActivities.push(
+                <SingleActivityItemWithDelete
+                    viewActivityPage={props.viewActivityPage}
+                    viewActivity={props.viewActivity}
+                    deleteActivity={props.deleteActivity}
+
+                    title={activity.title} 
+                    location={activity.location_text} 
+                    start={activity.start_time} 
+                    description={activity.description}
+                    
+                    id={i}
+                    key={randomNum() + i}
+                />
+            )
+        }
+
+    //confirmed acts
+    for (let i = 0; i < confirmedActivityArr.length; i++) {
+        let activity = confirmedActivityArr[i];
+
             listConfirmedActivities.push(
                 <SingleActivityItemWithDelete
                     viewActivityPage={props.viewActivityPage}
@@ -40,24 +65,9 @@ const UserEventsComponent = (props) => {
             )
         }
 
-        if (activity.interested === true) {
-            listInterestedActivities.push(
-                <SingleActivityItemWithDelete
-                    viewActivityPage={props.viewActivityPage}
-                    viewActivity={props.viewActivity}
-                    deleteActivity={props.deleteActivity}
+    
         
-                    title={activity.title} 
-                    location={activity.location_text} 
-                    start={activity.start_time} 
-                    description={activity.description}
-                    
-                    id={i}
-                    key={randomNum() + i}
-                />
-            )
-        }
-    }
+    
 
   return (
     <div className="user-events-container">

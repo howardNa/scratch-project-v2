@@ -3,7 +3,8 @@ import * as types from '../actionTypes.js'
 const initialState = {
   searchedActivities: [],
   viewActivity: {},
-  interestedInActivity: []
+  interestedInActivity: [],
+  confirmedActivity: []
 }
 
 const activitiesReducer = (state = initialState, action) => {
@@ -16,6 +17,7 @@ const activitiesReducer = (state = initialState, action) => {
     newState1.searchedActivities = activitiesPayload
     newState1.viewActivity = state.viewActivity
     newState1.interestedInActivity = state.interestedInActivity
+    newState1.confirmedActivity = state.confirmedActivity
 
     return newState1;
 
@@ -27,6 +29,7 @@ const activitiesReducer = (state = initialState, action) => {
     newState2.viewActivity = state.searchedActivities[activityId]
     newState2.searchedActivities = state.searchedActivities
     newState2.interestedInActivity = state.interestedInActivity
+    newState2.confirmedActivity = state.confirmedActivity
 
     return newState2;
 
@@ -52,6 +55,7 @@ const activitiesReducer = (state = initialState, action) => {
       newState3.searchedActivities = state.searchedActivities;
       newState3.viewActivity = state.viewActivity;
       newState3.interestedInActivity = interestedInActivityCopy;
+      newState3.confirmedActivity = state.confirmedActivity
   
       return newState3;
 
@@ -60,29 +64,65 @@ const activitiesReducer = (state = initialState, action) => {
       return state;
     }
 
-  //   case types.CONFIRM_ACTIVITY:
+    case types.CONFIRM_ACTIVITY:
 
+    console.log('firing confirm reducer')
 
+    const newState4 = {}
 
-    case types.DELETE_ACTIVITY:
+    const confirmedActivityCopy = state.confirmedActivity.slice();
+    const addToConfirmed = state.viewActivity;
 
-    const newState5 ={}
+    let alreadyConfirmed = false;
 
-    const arr = state.interestedInActivity.slice()
-
-    let deleteId = action.payload
-
-    for (let i = 0; i < arr.length; i++) {
-      if (i === deleteId) {
-        arr.splice(i, 1)
+    for (let i = 0; i < confirmedActivityCopy.length; i++) {
+      
+      if (JSON.stringify(confirmedActivityCopy[i]) === JSON.stringify(addToConfirmed) && addToConfirmed.confirmed === true) {
+        alreadyConfirmed = true;
       }
+
     }
 
-    newState5.searchedActivities = state.searchedActivities;
-    newState5.viewActivity = state.viewActivity;
-    newState5.interestedInActivity = arr;
+    if (!alreadyConfirmed) {
+      addToConfirmed.confirmed = true;
+      confirmedActivityCopy.push(addToConfirmed);
+      newState4.searchedActivities = state.searchedActivities;
+      newState4.viewActivity = state.viewActivity;
+      newState4.interestedInActivity = state.interestedInActivity;
+      newState4.confirmedActivity = confirmedActivityCopy;
 
-    return newState5;
+      console.log('newState should have something in confirmed array: ', newState4)
+  
+      return newState4;
+
+    } else {
+
+      return state;
+    }
+
+
+
+
+    // case types.DELETE_ACTIVITY:
+
+    // const newState5 ={}
+
+    // const arr = state.interestedInActivity.slice()
+
+    // let deleteId = action.payload
+
+    // for (let i = 0; i < arr.length; i++) {
+    //   if (i === deleteId) {
+    //     arr.splice(i, 1)
+    //   }
+    // }
+
+    // newState5.searchedActivities = state.searchedActivities;
+    // newState5.viewActivity = state.viewActivity;
+    // newState5.interestedInActivity = arr;
+    // newState5.confirmedActivity = state.confirmedActivity
+
+    // return newState5;
 
 
 

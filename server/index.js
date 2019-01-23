@@ -121,7 +121,6 @@ let connections = [];
 
 io.sockets.on("connection", function(socket){
   connections.push(socket);
-  socket.emit('send message', "hello world")
   console.log('Connected: %s sockets connected', connections.length);
 
   // Disconnect

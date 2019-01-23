@@ -43,7 +43,7 @@ const ChatBox = () => {
             <div className="col-md-4">
                 <div className="well">
 
-                <h3>User Chat</h3>
+                <h3 id="user-chat">User Chat</h3>
                 <ul className="list-group" id="users"> </ul>
                 </div>
 
@@ -67,14 +67,14 @@ const ChatBox = () => {
                             }}></textarea>
                             <br />
                             
-                            <input type="submit" onClick={function(e){
+                            {/* <input type="submit" onClick={function(e){
                                 let message = document.getElementById('message')
                                 console.log(message.value)
                                 e.preventDefault();
                                 console.log("Bottom Submitted");
                                 socket.emit('send message', message.value);
                                 message.value = '';
-                            }} className="form_button" value="Send Message"></input>
+                            }} className="form_button" value="Send Message"></input> */}
                         
                         </div>
                     </form>

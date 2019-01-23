@@ -6,34 +6,33 @@ const socket = openSocket('http://localhost:8000');
 
 
 document.addEventListener("DOMContentLoaded", function() { 
-    let socket = openSocket.connect();
+    let socket = io.connect();
     let chat = document.getElementById('chat')
 
-    document.getElementById('form_button').addEventListener('submit', function(e){
-        e.preventDefault();
-        console.log("Submitted");
-        socket.emit('send message', message.value);
-        message.value = '';
-        return false;
-    })
-    let message = document.getElementById('message')
-    
-    // messageForm.submit(function(e){
-    //     e.preventDefault();
-    //     console.log("Submitted");
-    //     socket.emit('send message', message.val());
-    //     message.val('');
-    //     return false;
-    // })
+    if(e){
+        document.getElementById('form_button').addEventListener('submit', function(e){
+            e.preventDefault();
+            console.log("Top Submitted");
+            socket.emit('send message', message.value);
+            message.value = '';
+        });
+    }
+   
 
+    let message = document.getElementById('message')
 
 });
 
-socket.on('new message', function(data){
-    console.log("inside chat append: ", data)
-    chat.innerHTML = data;
-})
 
+socket.on('new message', function(data){
+    console.log("inside chat append: ", data);
+    let node = document.createElement('LI');
+    node.setAttribute("class", "chat-message");
+    // let textNode = document.createElement(data);
+    node.innerHTML = data;
+    // node.appendChild(textNode);
+    chat.appendChild(node);
+})
 
 const ChatBox = () => {
     
@@ -44,7 +43,7 @@ const ChatBox = () => {
             <div className="col-md-4">
                 <div className="well">
 
-                <h3>User Chat</h3>
+                <h3 id="user-chat">User Chat</h3>
                 <ul className="list-group" id="users"> </ul>
                 </div>
 
@@ -53,17 +52,29 @@ const ChatBox = () => {
 
                     <form id="messageForm">
                         <div className="form-group">
-                            <textarea className="form-control" id="message" placeholder="Message here"></textarea>
+                            <textarea className="form-control" id="message" placeholder="Message here" onKeyDown={function(e){
+                                if (e.keyCode === 13 && e.shiftKey){
+                                    e.preventDefault();
+                                    e.target.value += "\n";
+                                } else if (e.keyCode === 13) {
+                                    let message = document.getElementById('message')
+                                    e.preventDefault();
+                                    message.value = message.value.replace(/\r?\n/g, '<br />');
+                                    socket.emit('send message', message.value);
+                                    message.value = '';
+
+                                }
+                            }}></textarea>
                             <br />
                             
-                            <input type="submit" onClick={function(e){
+                            {/* <input type="submit" onClick={function(e){
                                 let message = document.getElementById('message')
                                 console.log(message.value)
-        e.preventDefault();
-        console.log("Submitted");
-        socket.emit('send message', message.value);
-        message.value = '';
-    }} className="form_button" value="Send Message"></input>
+                                e.preventDefault();
+                                console.log("Bottom Submitted");
+                                socket.emit('send message', message.value);
+                                message.value = '';
+                            }} className="form_button" value="Send Message"></input> */}
                         
                         </div>
                     </form>

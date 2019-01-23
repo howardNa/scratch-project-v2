@@ -27,6 +27,10 @@ passport.use(new GoogleStrategy({
   console.log(profile);
   console.log(cb);
 
+
+  //check if user exists on the databse
+
+
   return cb(null, profile);
 }
 ));
@@ -73,7 +77,7 @@ app.get('/auth/google' ,passport.authenticate('google', {
   scope: ['profile', 'email']
 }))
 
-app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), 
+app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), eventController.login, 
 function(req,res) {
   console.log('TRY REDIRECTING')
   console.log('is there a user here: ',req.user.id);
@@ -123,7 +127,6 @@ let connections = [];
 
 io.sockets.on("connection", function(socket){
   connections.push(socket);
-  socket.emit('send message', "hello world")
   console.log('Connected: %s sockets connected', connections.length);
 
   // Disconnect

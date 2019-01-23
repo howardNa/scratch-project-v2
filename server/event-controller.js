@@ -1,5 +1,7 @@
 const db = require('./database');
 const pgp = require('pg-promise')();
+const bcrypt = require('bcryptjs');
+const uuidv1 = require('uuid/v1');
 
 const eventController = {};
 
@@ -8,21 +10,44 @@ const eventController = {};
 //Add submitted user data to USER table
 eventController.createAccount = (req, res) => { 
 
+  const salt = bcrypt.genSaltSync(10);
   //##TO DO: add timestamp field to table and here based on where it comes from
   //let timestamp = req.timestamp; //double check where this is coming from
-  let username = req.body.username;
-  let password = req.body.password;
-  let first = req.body.first;
-  let last = req.body.last;
-  let birthday = req.body.birthday;
-  //##TO DO: add image url
-  //let imageurl = www.imageurlplaceholder.com
+
+
+  let username, password, first, last, birthday, user_id, registration_origin, email;
+
+  if(req.user.id){
+    registration_origin = 'google';
+    user_id = req.user.id;
+    username = req.user.displayName;
+    first = req.user.name.givenName;
+    last = req.user.name.familyName;
+    email = req.user.emails[0];
+    birthday = '1990-01-01';
+    password = bcrypt.hashSync(req.user.id);
+  }
+
+  else{
+    registration_origin = 'local';
+    user_id = uuidv1();
+    birthday = req.body.birthday;
+    first = req.body.first;
+    last = req.body.last;
+    password = bcrypt.hashSync(req.body.password,salt);
+    email = req.body.email;
+    username = req.body.username;
+  }
+
+  let values = [user_id, username, password, first, last, birthday, email, registration_origin];
+  console.log(values);
+
 
   //add timestamp, imageurl
-  let queryString = `INSERT INTO users (username, password, first, last, birthday) VALUES ('${username}', '${password}', '${first}', '${last}', '${birthday}') RETURNING *`;
-  db.one(queryString)
-  .then((data) => { res.status(200).json(data); })
-  .catch(error => { res.status(400).send(error); });
+  let queryString = 'INSERT INTO users (users_id, username, password, first, last, birthday, email, registration_origin) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);'
+  // db.one(queryString, [req.users])
+  // .then((data) => { res.status(200).json(data); })
+  // .catch(error => { res.status(400).send(error); });
 };
 
 //## TO DO:
@@ -207,14 +232,24 @@ eventController.generateLatAndLong = (req, res) => {
 //---------- Login Page Route --------------------------
 //----Login button route: app.post('/auth/login', eventController.login)
 
-eventController.login = (req, res) => {
-  res.send("greetings from inside of the login controller");
+eventController.login = (req, res, next) => {
+  console.log("greetings from inside of the login controller");
   //SEARCH users TABLE for username 
   //hash submitted
   //grab hashed password from database
   //compare the two passwords
   //if found create a JWT and send it to the client, 
   //otherwise don't create a JWT, send to client: password is incorrect
+
+  let queryString = `SELECT * FROM users WHERE users_id = '`+req.user.id +`';`;
+  console.log(queryString);
+  db.one(queryString)
+  .then((data) => { 
+    console.log('here is your data:', data);  next(); 
+  })
+  .catch(error => res.redirect('/'));
+
 };
+
 
 module.exports = eventController;

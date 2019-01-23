@@ -10,13 +10,15 @@
   "author": "Robert McHalffey, Byron Inocencio, Howard Na",
   "license": "ISC",
   "dependencies": {
-    "socket.io": "*",
+    "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "pg-promise": "^8.5.5"
+    "pg-promise": "^8.5.5",
+    "socket.io": "*",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "passport": "^0.4.0",

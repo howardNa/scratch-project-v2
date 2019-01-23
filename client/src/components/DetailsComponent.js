@@ -10,7 +10,7 @@ const DetailsComponent = (props) => {
          <div className="activity-item-row">
 
             <div className="host-column">
-                <img className="host-img" src="../../build/images/stick-figure-dude.png"></img>
+                <img className="host-img" src="../../build/images/user-icon.png"></img>
                 <h5 className="host-name">(Username goes here)</h5>
             </div>
 

@@ -19,3 +19,4 @@ export const SIGN_UP = "SIGN_UP";
 
 export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 export const NOT_GOING = 'NOT_GOING';
+export const UNHOST_ACTIVITY = 'UNHOST_ACTIVITY';

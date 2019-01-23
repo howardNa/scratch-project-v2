@@ -169,13 +169,13 @@ eventController.createActivity = (req, res) => {
   // let user = req.params.id;
 
   //add timestamp, location_lat, location_long, creator_id' + ${timestamp}', ${location_lat}, ${location_long}, , ${creator_id}
-  let queryString = `INSERT INTO activities(title, description, location_text, start_time) VALUES ($1, $2, $3, $4)`
+  let queryString = `INSERT INTO activities(title, description, location_text, start_time) VALUES ($1, $2, $3, $4) RETURNING *`
 
   
   //##TODO: add to query: INSERT INTO confirmed (user_id, activity_id). activity id becomes available in this part. need client to submit userid with request
   console.log("***The query string is: ", queryString);
   db.one(queryString, [title, description, location_text, start_time])
-  .then((data) => {  console.log("Success!");  resolve(res.status(200).json(data)) })
+  .then((data) => {  console.log("Success!");  res.status(200).json(data) })
   .catch((error) => { console.log(error); res.status(400).send(error); });
 };
 

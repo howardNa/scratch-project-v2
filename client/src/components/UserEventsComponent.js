@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import GoingPerson from './GoingPerson.js'
 import SingleActivityItemWithDelete from './SingleActivityItemWithDelete.js';
 import SingleActivityItemNotGoing from './SingleActivityItemNotGoing.js';
+import SingleActivityItemUnhost from './SingleActivityItemUnhost.js';
 import '../styles/UserEventsComponent.css';
 
 const UserEventsComponent = (props) => {
@@ -11,17 +12,29 @@ const UserEventsComponent = (props) => {
     const interestedInActivitiesArr = props.interestedInActivity;
 
     const confirmedActivityArr = props.confirmedActivity;
-
-    console.log('logging confirmed arr: ', confirmedActivityArr)
+    
+    const createdActivityArr = props.createdActivity;
 
     const listInterestedActivities = []
 
     const listConfirmedActivities = []
 
+    const listCreatedActivities = []
+
       //random num generator for singleActivityItem key
     function randomNum() {
         let num = Math.floor(Math.random() * 100000)
         return num;
+    }
+
+    //check if array empty to determine whether to display appropriate headings
+
+    function isListEmpty(arr, str) {
+        if (arr.length === 0) {
+            return '';
+        } else {
+            return str;
+        }
     }
 
     //interested acts
@@ -66,6 +79,27 @@ const UserEventsComponent = (props) => {
             )
         }
 
+    //created acts
+    for (let i = 0; i < createdActivityArr.length; i++) {
+        let activity = createdActivityArr[i];
+
+            listCreatedActivities.push(
+                <SingleActivityItemUnhost
+                    viewActivityPage={props.viewActivityPage}
+                    viewActivity={props.viewActivity}
+                    unhostActivity={props.unhostActivity}
+
+                    title={activity.title} 
+                    location={activity.location_text} 
+                    start={activity.start_time} 
+                    description={activity.description}
+                    
+                    id={i}
+                    key={randomNum() + i}
+                />
+            )
+        }
+
     
         
     
@@ -76,17 +110,17 @@ const UserEventsComponent = (props) => {
         <div className="user-events-list">
         
             <div className="created-event">
-                <h3 className="event-status-header"><i>Created</i></h3>
-                <SingleActivityItemWithDelete />
+                <p className="event-status-header"><i>{isListEmpty(listCreatedActivities, 'Created:')}</i></p>
+                {listCreatedActivities}
             </div>
 
             <div className="going-event">
-                <h3 className="event-status-header"><i>Going</i></h3>
+                <p className="event-status-header"><i>{isListEmpty(listConfirmedActivities, 'Confirmed:')}</i></p>
                 {listConfirmedActivities}
             </div>
 
             <div className="interested-event">
-                <h3 className="event-status-header"><i>Interested</i></h3>
+                <p className="event-status-header"><i>{isListEmpty(listInterestedActivities, 'Interested:')}</i></p>
                 {listInterestedActivities}
             </div>
         </div>

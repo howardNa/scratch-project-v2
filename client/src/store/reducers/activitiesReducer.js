@@ -105,15 +105,21 @@ const activitiesReducer = (state = initialState, action) => {
       return state;
     }
 
-    // case types.CREATE_ACTIVITY: 
+    case types.CREATE_ACTIVITY: 
 
-    // const newState6 = {};
+    const newState7 = {};
 
-    // let userCreatedActivity = action.payload;
+    let createdActivityArr = state.createdActivity.slice()
+    let userCreatedActivity = action.payload;
+    createdActivityArr.push(userCreatedActivity)
 
+    newState7.searchedActivities = state.searchedActivities;
+    newState7.viewActivity = state.viewActivity;
+    newState7.interestedInActivity = state.interestedInActivity;
+    newState7.confirmedActivity = state.confirmedActivity;
+    newState7.createdActivity = createdActivityArr;
 
-
-
+    return newState7;
 
 
 
@@ -142,8 +148,6 @@ const activitiesReducer = (state = initialState, action) => {
 
     case types.NOT_GOING:
 
-    console.log('inside not going reducer after clicking not going button')
-
     const newState6 = {}
 
     const newArr = state.confirmedActivity.slice();
@@ -164,7 +168,26 @@ const activitiesReducer = (state = initialState, action) => {
     return newState6;
 
 
+    case types.UNHOST_ACTIVITY:
 
+    const newState8 = {}
+
+    const newArrForUnhost = state.createdActivity.slice();
+    let unhostId = action.payload;
+
+    for (let i = 0; i < newArrForUnhost.length; i ++) {
+      if (i === unhostId) {
+        newArrForUnhost.splice(i, 1)
+      }
+    }
+
+    newState8.searchedActivities = state.searchedActivities;
+    newState8.viewActivity = state.viewActivity;
+    newState8.interestedInActivity = state.interestedInActivity;
+    newState8.confirmedActivity = state.confirmedActivity;
+    newState8.createdActivity = newArrForUnhost;
+
+    return newState8;
 
 
 

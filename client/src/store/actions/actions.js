@@ -1,5 +1,5 @@
 import * as types from '../actionTypes.js';
-import { apiCall } from '../../services/api';
+import { apiCall, apiCallForGoogleAuth } from '../../services/api';
 import axios from 'axios';
 
 export const searchForActivities = (activityInfo) => {
@@ -27,6 +27,19 @@ export const createActivity = (activityInfo) => {
       })
       .catch((err) => console.log(err))
   }
+}
+
+export const signInWithGoogle = () => {
+    return dispatch => {
+        return apiCallForGoogleAuth()
+            .then(response => {
+                dispatch({
+                    type: types.SIGN_IN_WITH_GOOGLE,
+                    payload: response
+                })
+            })
+            .catch(err => console.log(err))
+    }
 }
 
 export const viewActivity = (activityId) => ({

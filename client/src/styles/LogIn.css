@@ -46,6 +46,20 @@
     width: 60px;
     font-size: 18px;
     margin-top: 15px;
-    margin-left: 180px;
+    margin-left: 140px;
+    border-radius: 5px;
+}
+
+.log-in-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#google-sign-in-button {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 15px;
     border-radius: 5px;
 }

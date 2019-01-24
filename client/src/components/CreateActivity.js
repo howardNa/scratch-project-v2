@@ -70,15 +70,9 @@ class CreateActivity extends Component {
           <h2>Where do you want to do it?</h2>
           <input className="location-input" id={'locationInput'} onChange={this.handleChange} placeholder='Location' ></input>
 
-<<<<<<< HEAD
-          <p><i>Got any additional info? Enter it below!</i></p>
-          <input className="additional-info-input" id={'additionalInfo'} onChange={this.handleChange} ></input>
-          <button className="create-button" onClick={this.createActivity}>Create</button>
-=======
           <p>Got any additional info? Enter it below!</p>
           <textarea className="additional-info-input" id={'additionalInfo'} onChange={this.handleChange} ></textarea>
           <button className="create-button" onClick={this.createActivity} >Create</button>
->>>>>>> 4cfabf67ed9bbabef08dbf1737e327917f263934
         
         </div>
       </div>

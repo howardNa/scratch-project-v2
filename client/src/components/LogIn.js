@@ -50,7 +50,7 @@ class LogIn extends Component {
     
                     <div className='log-in-row'>
                         <button id="sign-in-button">Log in</button>
-                        <button onClick={this.props.signInWithGoogle} id='google-sign-in-button'>Sign in with Google</button>
+                        <a href='auth/google'><img id='google-sign-in-button' src="../../images/google-sign-in.png"></img></a>
                     </div>
     
                 </div>

@@ -8,12 +8,8 @@ const SingleActivityItemWithDelete = (props) => {
     <div className="activity-item-container">
       <div className="activity-item-row">
         <div className="host-column">
-<<<<<<< HEAD
-          <img className="host-img" src="../../build/images/stick-figure-dude.png"></img>
-=======
           <img className="host-img" src="images/anon-user-icon.png"></img>
->>>>>>> 4cfabf67ed9bbabef08dbf1737e327917f263934
-          <h5 className="host-name">(Username goes here)</h5>
+          <h5 className="host-name"></h5>
         </div>
         <div className="description-column">
           <h3 className="description-item">{props.title}</h3>

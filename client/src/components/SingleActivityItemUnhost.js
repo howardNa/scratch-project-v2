@@ -8,7 +8,11 @@ const SingleActivityItemUnhost = (props) => {
     <div className="activity-item-container">
       <div className="activity-item-row">
         <div className="host-column">
+<<<<<<< HEAD
           <img className="host-img" src="../../build/images/stick-figure-dude.png"></img>
+=======
+          <img className="host-img" src="images/anon-user-icon.png"></img>
+>>>>>>> 4cfabf67ed9bbabef08dbf1737e327917f263934
           <h5 className="host-name">(Username goes here)</h5>
         </div>
         <div className="description-column">
@@ -27,7 +31,7 @@ const SingleActivityItemUnhost = (props) => {
           className="details-button"
         >View</button>
 
-        <button onClick={props.unhostActivity} id={props.id} className="unhost-button"><i>Cancel</i></button>
+        <button onClick={props.unhostActivity} id={props.id} className="unhost-button">Cancel</button>
 
 
       </div>

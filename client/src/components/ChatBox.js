@@ -4,6 +4,7 @@ import '../styles/ChatBox.css';
 import openSocket from 'socket.io-client';
 const socket = openSocket('http://192.168.0.224:8000');
 
+// my address 192.168.0.224
 
 document.addEventListener("DOMContentLoaded", function() { 
     let chat = document.getElementById('chat')

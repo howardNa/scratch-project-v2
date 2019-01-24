@@ -6,7 +6,11 @@ const UserProfile = () => {
   return (
     <div className="user-profile-container">
         <div className="user-info">
+<<<<<<< HEAD
             <img className="user-img" src="../../build/images/stick-figure-dude.png"></img>
+=======
+            <img className="user-img" src="images/anon-user-icon.png"></img>
+>>>>>>> 4cfabf67ed9bbabef08dbf1737e327917f263934
 
             <div className="user-info-column">
                 <h3 className="user-info-row">Tim Mayfield</h3>

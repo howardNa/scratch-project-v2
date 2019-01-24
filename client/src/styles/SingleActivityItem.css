@@ -5,6 +5,7 @@
 .activity-item-row {
     display: flex;
     flex-direction: row;
+    border: black;
 }
 
 .host-column {

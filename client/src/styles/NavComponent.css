@@ -1,19 +1,41 @@
 .navbar-flex {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
+    background-color: lightblue;
+    border-bottom: solid;
+    border-color: lightblue;
+    border-width: 1px;
+    height: 75px;
+    width: 100%;
+    /* margin-bottom: 100px; */
+    z-index: 9;
 }
+
 
 .nav-logo {
     margin-left: 20px;
+    padding-top: 5px;
+    height: 65px;
 }
 
 .nav-links {
-    margin-left: 750px;
-    margin-top: 30px;
+    margin: auto;
+    margin-top: auto;
 }
 
 .link {
     margin-left: 15px;
     font-size: 18px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    padding: 8px;
+    border-color: grey;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 

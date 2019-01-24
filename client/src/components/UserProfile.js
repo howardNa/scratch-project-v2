@@ -6,7 +6,7 @@ const UserProfile = () => {
   return (
     <div className="user-profile-container">
         <div className="user-info">
-            <img className="user-img" src="../../build/images/anon-user-icon.png"></img>
+            <img className="user-img" src="images/anon-user-icon.png"></img>
 
             <div className="user-info-column">
                 <h3 className="user-info-row">Tim Mayfield</h3>

@@ -9,6 +9,7 @@ module.exports = {
   "output": {
     "filename": 'webpack-bundle.js',
     "path": path.resolve(__dirname, 'build'),
+    "publicPath": path.resolve(__dirname + 'images')
   },
   "module": {
     "rules": [

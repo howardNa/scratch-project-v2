@@ -9,6 +9,7 @@ const PORT = 8000;
 const db = require('./database');
 const eventController = require('./event-controller');
 const io = require('socket.io').listen(server);
+const cookieSession = require('cookie-session');
 
 const path = require('path');
 require('dotenv').config();
@@ -17,15 +18,21 @@ require('dotenv').config();
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 
+
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 *1000,
+  keys: ['sdaffdsjdfas']
+}))
+
 passport.use(new GoogleStrategy({
   clientID: '993502270043-tde7j9017fc3vkleork8ib8r9vef194k.apps.googleusercontent.com',
   clientSecret:  'D-bz3BLMM3qSZ-IPF_y_Xwdm',
   callbackURL: "/auth/google/callback"
 }, (accessToken, refreshToken, profile, cb) => {
-  console.log(accessToken);
-  console.log(refreshToken);
-  console.log(profile);
-  console.log(cb);
+  // console.log(accessToken);
+  // console.log(refreshToken);
+  // console.log(profile);
+  // console.log(cb);
 
 
   //check if user exists on the databse
@@ -45,12 +52,14 @@ passport.use(new GoogleStrategy({
 // from the database when deserializing.  However, due to the fact that this
 // example does not have a database, the complete Facebook profile is serialized
 // and deserialized.
-passport.serializeUser(function(user, cb) {
-  cb(null, user);
+passport.serializeUser(function(user, done) {
+  console.log('IN SERIALIZE');
+  done(null, user);
 });
 
-passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
+passport.deserializeUser(function(obj, done) {
+  console.log('IN DESERIALIZE');
+  done(null, obj);
 });
 
 
@@ -81,8 +90,11 @@ app.get('/auth/google/callback', passport.authenticate('google', {failureRedirec
 function(req,res) {
   console.log('TRY REDIRECTING')
   console.log('is there a user here: ',req.user.id);
+  console.log('*****',req.session.passport);
   console.log(res.locals.data)
-  res.status(200).json(res.locals.data);
+  //res.send(req.user);
+
+  res.redirect('/');
 })
 
 

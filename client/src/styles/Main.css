@@ -1,0 +1,12 @@
+/* GLOBAL */
+
+body {
+    margin: 0;
+    padding-top: 100px;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+

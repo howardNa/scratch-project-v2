@@ -7,12 +7,15 @@ const SearchBoxComponent = (props) => {
   return (
     <div className="main-search-bar-container">
       <div className="search-bar-flex-container">
+
         <h2>What do you want to do?</h2>
-        <input id="title" className="activity-input" value={props.title} onChange={props.handleChange} placeholder="Activity"></input>
+        <input id="title" className="activity-input" value={props.title} onChange={props.handleChange} placeholder="Activity" autoComplete="off"></input>
+
         <h2>What time do you want to do it?</h2>
           <div className="time-row-container">
             <input type="time" className="time-input" placeholder="Time"></input>
           </div>
+
       <button className="go-button" onClick={props.handleSearch}>Go</button>
       </div>
     </div>

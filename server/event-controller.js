@@ -247,7 +247,9 @@ eventController.login = (req, res, next) => {
   console.log(queryString);
   db.one(queryString)
   .then((data) => { 
-    console.log('here is your data:', data);  next(); 
+    console.log('here is your data:', data);
+    res.locals.data = data;
+    next(); 
   })
   .catch(error => eventController.createAccount(req,res,next));
 

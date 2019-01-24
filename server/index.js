@@ -81,7 +81,8 @@ app.get('/auth/google/callback', passport.authenticate('google', {failureRedirec
 function(req,res) {
   console.log('TRY REDIRECTING')
   console.log('is there a user here: ',req.user.id);
-  res.redirect('/');
+  console.log(res.locals.data)
+  res.status(200).json(res.locals.data);
 })
 
 
@@ -153,3 +154,4 @@ io.sockets.on("connection", function(socket){
 server.listen(PORT, () => {
   console.log(`Connected and listening on ${PORT}`);
 })
+

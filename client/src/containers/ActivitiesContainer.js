@@ -59,12 +59,12 @@ class ActivitiesContainer extends Component {
           handleChange={this.handleChange}
           handleSearch={this.handleSearch} 
         />
-        <MapContainer />
         <ActivitiesComponent 
           searchActivities={this.props.searchActivities} 
           viewActivityPage={this.viewActivityPage}
           viewActivity={this.props.viewActivity}
         />
+        <MapContainer />
       </div>
     )
   };

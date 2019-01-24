@@ -30,6 +30,7 @@ class ActivitiesContainer extends Component {
       showMap: true,
       showList: false,
       title: '',
+      start: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -43,7 +44,8 @@ class ActivitiesContainer extends Component {
   };
 
   handleSearch() {
-    this.props.searchForActivities({title: this.state.title});
+    console.log('you clicked go, logging this.state.start: ', this.state.start)
+    this.props.searchForActivities({title: this.state.title, start_time: this.state.start});
   }
 
   viewActivityPage() {

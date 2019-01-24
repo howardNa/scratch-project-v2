@@ -11,7 +11,7 @@ const DetailsComponent = (props) => {
 
             <div className="host-column">
                 <img className="host-img" src="images/anon-user-icon.png"></img>
-                <h5 className="host-name">(Username goes here)</h5>
+                <h5 className="host-name"></h5>
             </div>
 
             <div className="description-column">
@@ -22,8 +22,8 @@ const DetailsComponent = (props) => {
             </div>
 
             <div className="buttons-column">
-                <button onClick={props.interestedInActivity} className="button-item">Interested</button>
-                <button onClick={props.confirmActivity} className="button-item">Confirm</button>
+                <button onClick={props.interestedInActivity} className="button-item-interested">Interested</button>
+                <button onClick={props.confirmActivity} className="button-item-confirmed">Confirm</button>
             </div>
 
         </div>

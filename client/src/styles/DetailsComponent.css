@@ -43,10 +43,40 @@
     margin-left: 20px;
 }
 
-.button-item {
+.button-item-interested {
     height: 30px;
     width: 90px;
     font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button-item-interested:focus {
+    height: 30px;
+    width: 90px;
+    color: white;
+    background-color: #FF8944;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.button-item-confirmed {
+    height: 30px;
+    width: 90px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button-item-confirmed:focus {
+    height: 30px;
+    width: 90px;
+    color: white;
+    background-color: #67F751;
+    font-size: 14px;
+    outline: none;
     border-radius: 5px;
     margin-top: 10px;
 }

@@ -13,7 +13,7 @@ const SearchBoxComponent = (props) => {
 
         <h2>What time do you want to do it?</h2>
           <div className="time-row-container">
-            <input type="time" className="time-input" placeholder="Time"></input>
+            <input type='time' className="time-input" value={props.start} onChange={props.handleChange} placeholder="Time"></input>
           </div>
 
       <button className="go-button" onClick={props.handleSearch}>Go</button>

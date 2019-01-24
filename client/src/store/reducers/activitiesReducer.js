@@ -190,6 +190,22 @@ const activitiesReducer = (state = initialState, action) => {
     return newState8;
 
 
+    case types.SIGN_IN_WITH_GOOGLE:
+
+    const newState9 = {}
+    const user = action.payload;
+
+    console.log('in reducer, logged in with google, here is user data: ', user)
+
+    newState9.searchedActivities = state.searchedActivities;
+    newState9.viewActivity = state.viewActivity;
+    newState9.interestedInActivity = state.interestedInActivity;
+    newState9.confirmedActivity = state.confirmedActivity;
+    newState9.createdActivity = state.createdActivity;
+
+    return newState9;
+
+
 
 
 

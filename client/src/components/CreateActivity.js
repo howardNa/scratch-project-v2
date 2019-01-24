@@ -72,7 +72,7 @@ class CreateActivity extends Component {
 
           <p><i>Got any additional info? Enter it below!</i></p>
           <input className="additional-info-input" id={'additionalInfo'} onChange={this.handleChange} ></input>
-          <button className="create-button" onClick={this.createActivity} >Create</button>
+          <button className="create-button" onClick={this.createActivity}>Create</button>
         
         </div>
       </div>

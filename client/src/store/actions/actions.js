@@ -42,9 +42,10 @@ export const signInWithGoogle = () => {
     }
 }
 
-export const viewActivity = (activityId) => ({
+export const viewActivity = (activityId, status) => ({
     type: types.VIEW_ACTIVITY,
-    payload: activityId
+    payload: activityId,
+    status: status
 })
 
 export const interestedInActivity = (interested) => ({

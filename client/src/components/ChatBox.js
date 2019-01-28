@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 socket.on('new message', function(data){
-    console.log("inside chat append: ", data);
     let node = document.createElement('LI');
     node.setAttribute("class", "chat-message");
     node.innerHTML = data;

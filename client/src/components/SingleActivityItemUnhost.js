@@ -24,6 +24,7 @@ const SingleActivityItemUnhost = (props) => {
             props.viewActivityPage()
           }} 
           id={props.id}
+          status='created'
           className="details-button"
         >View</button>
 

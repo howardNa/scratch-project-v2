@@ -44,7 +44,6 @@ class ActivitiesContainer extends Component {
   };
 
   handleSearch() {
-    console.log('you clicked go, logging this.state.start: ', this.state.start)
     this.props.searchForActivities({title: this.state.title, start_time: this.state.start});
   }
 

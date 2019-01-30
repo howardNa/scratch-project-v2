@@ -27,12 +27,36 @@ const activitiesReducer = (state = initialState, action) => {
 
     const newState2 = {}
     const activityId = action.payload
+    const status = action.status
 
+    if (status === 'interested') {
+    newState2.viewActivity = state.interestedInActivity[activityId]
+    newState2.searchedActivities = state.searchedActivities
+    newState2.interestedInActivity = state.interestedInActivity
+    newState2.confirmedActivity = state.confirmedActivity
+    newState2.createdActivity = state.createdActivity
+    
+  } else if (status === 'confirmed') {
+    newState2.viewActivity = state.confirmedActivity[activityId]
+    newState2.searchedActivities = state.searchedActivities
+    newState2.interestedInActivity = state.interestedInActivity
+    newState2.confirmedActivity = state.confirmedActivity
+    newState2.createdActivity = state.createdActivity
+   
+  } else if (status === 'created') {
+    newState2.viewActivity = state.createdActivity[activityId]
+    newState2.searchedActivities = state.searchedActivities
+    newState2.interestedInActivity = state.interestedInActivity
+    newState2.confirmedActivity = state.confirmedActivity
+    newState2.createdActivity = state.createdActivity
+    
+  } else {
     newState2.viewActivity = state.searchedActivities[activityId]
     newState2.searchedActivities = state.searchedActivities
     newState2.interestedInActivity = state.interestedInActivity
     newState2.confirmedActivity = state.confirmedActivity
     newState2.createdActivity = state.createdActivity
+    }
 
     return newState2;
 
@@ -70,8 +94,6 @@ const activitiesReducer = (state = initialState, action) => {
 
     case types.CONFIRM_ACTIVITY:
 
-    console.log('firing confirm reducer')
-
     const newState4 = {}
 
     const confirmedActivityCopy = state.confirmedActivity.slice();
@@ -95,8 +117,6 @@ const activitiesReducer = (state = initialState, action) => {
       newState4.interestedInActivity = state.interestedInActivity;
       newState4.confirmedActivity = confirmedActivityCopy;
       newState4.createdActivity = state.createdActivity
-
-      console.log('newState should have something in confirmed array: ', newState4)
   
       return newState4;
 
@@ -194,8 +214,6 @@ const activitiesReducer = (state = initialState, action) => {
 
     const newState9 = {}
     const user = action.payload;
-
-    console.log('in reducer, logged in with google, here is user data: ', user)
 
     newState9.searchedActivities = state.searchedActivities;
     newState9.viewActivity = state.viewActivity;

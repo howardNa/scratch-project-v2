@@ -17,7 +17,6 @@ const mapStateToProps = store => ({
   
 const mapDispatchToProps = dispatch => ({
   createActivity: (activityInfo) => {
-      console.log('here is activityInfo in map dispatch: ', activityInfo)
       dispatch(actions.createActivity(activityInfo))
   }
 });

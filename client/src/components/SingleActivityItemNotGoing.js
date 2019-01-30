@@ -24,6 +24,7 @@ const SingleActivityItemNotGoing = (props) => {
             props.viewActivityPage()
           }} 
           id={props.id}
+          status='confirmed'
           className="details-button"
         >View</button>
 

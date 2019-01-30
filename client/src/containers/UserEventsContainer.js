@@ -15,7 +15,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
 
   viewActivity: (e) => {
-    dispatch(actions.viewActivity(parseInt(e.target.id)))
+    dispatch(actions.viewActivity(parseInt(e.target.id), e.target.getAttribute('status')))
   },
 
   deleteActivity: (e) => {

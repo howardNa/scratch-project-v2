@@ -24,6 +24,7 @@ const SingleActivityItemWithDelete = (props) => {
             props.viewActivityPage()
           }} 
           id={props.id}
+          status='interested'
           className="details-button"
         >View</button>
 

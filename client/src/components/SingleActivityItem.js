@@ -22,6 +22,7 @@ const SingleActivityItem = (props) => {
             props.viewActivityPage()
           }} 
           id={props.id}
+          status="searched"
           className="details-button"
         >View</button>
       </div>

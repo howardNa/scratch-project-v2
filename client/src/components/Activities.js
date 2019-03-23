@@ -5,7 +5,6 @@ import '../styles/Activities.css';
 
 const ActivitiesComponent = (props) => {
   const foundActivities = props.searchActivities;
-  console.log('logging foundActivities: ', foundActivities)
 
   const listActivities = []
 
@@ -19,6 +18,7 @@ const ActivitiesComponent = (props) => {
     let activity = foundActivities[i];
     listActivities.push(
       <SingleActivityItem 
+        viewActivityPage={props.viewActivityPage}
         viewActivity={props.viewActivity}
         title={activity.title} 
         location={activity.location_text} 

@@ -4,17 +4,28 @@
   "description": "this is a node express server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "Robert McHalffey, Byron Inocencio, Howard Na",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "pg-promise": "^8.5.5"
+    "jest": "^23.6.0",
+    "pg-promise": "^8.5.5",
+    "save-dev": "^2.0.0",
+    "socket.io": "*",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "cookie-session": "^2.0.0-beta.3",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
+    "supertest": "^3.4.2"
   }
 }

@@ -6,12 +6,12 @@ const UserProfile = () => {
   return (
     <div className="user-profile-container">
         <div className="user-info">
-            <img className="user-img" src="../../build/images/stick-figure-dude.png"></img>
+            <img className="user-img" src='../../images/byron-img.jpg'></img>
 
             <div className="user-info-column">
-                <h3 className="user-info-row">Tim Mayfield</h3>
-                <p className="user-info-row"><i>tMayfield87</i></p>
-                <h4 className="user-info-row">June 7, 1987</h4>
+                <h3 className="user-info-row">Byron Inocencio</h3>
+                <p className="user-info-row"><i>byronisonlyKindaKoo</i></p>
+                <h4 className="user-info-row">June 30 1991</h4>
             </div>
         </div>
     </div>

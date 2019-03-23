@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/SingleActivityItem.css';
 
-const SingleActivityItem = (props) => {
+const SingleActivityItemNotGoing = (props) => {
+
   return (
     <div className="activity-item-container">
       <div className="activity-item-row">
@@ -16,18 +17,24 @@ const SingleActivityItem = (props) => {
           <h4 className="description-item"><i>{props.start}</i></h4>
           <p className="description-item">{props.description}</p>
         </div>
+
         <button 
           onClick={(e) => {
             props.viewActivity(e)
             props.viewActivityPage()
           }} 
           id={props.id}
-          status="searched"
+          status='confirmed'
           className="details-button"
         >View</button>
+
+
+        <button onClick={props.notGoing} id={props.id} className="delete-button">X</button>
+
+
       </div>
     </div>
   )
 }
 
-export default SingleActivityItem;
+export default SingleActivityItemNotGoing;

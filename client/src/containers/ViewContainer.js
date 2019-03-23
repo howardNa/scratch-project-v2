@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import * as actions from '../store/actions/actions.js'
 
 import DetailsComponent from '../components/DetailsComponent.js';
 import GoingComponent from '../components/GoingComponent.js'
@@ -11,29 +12,29 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // searchForActivities: (activity) => {
-  //   dispatch(actions.searchForActivities(activity))
-  // },
-
-  // viewActivity: (e) => {
-  //   dispatch(actions.viewActivity(parseInt(e.target.id)))
-  // }
+  interestedInActivity: (e) => {
+    dispatch(actions.interestedInActivity(e.target))
+  },
+  confirmActivity: (e) => {
+    dispatch(actions.confirmActivity(e.target))
+  }
 });
 
-class ViewContainer extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    console.log('logging viewClickedActivity: ', this.props.viewClickedActivity)
+const ViewContainer = (props) => {
     return (
       <div>
-        <DetailsComponent viewClickedActivity={this.props.viewClickedActivity} />
+        <DetailsComponent 
+          viewClickedActivity={props.viewClickedActivity} 
+          interestedInActivity={props.interestedInActivity}
+          confirmActivity={props.confirmActivity}
+          />
         <GoingComponent />
         <ChatBox />
       </div>
     )
-  }
+  
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ViewContainer));
+
+

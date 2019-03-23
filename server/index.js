@@ -8,10 +8,69 @@ const server = http.createServer(app);
 const PORT = 8000;
 const db = require('./database');
 const eventController = require('./event-controller');
+const io = require('socket.io').listen(server);
+const cookieSession = require('cookie-session');
+
+const path = require('path');
+require('dotenv').config();
+
+
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy
+
+
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 *1000,
+  keys: ['sdaffdsjdfas']
+}))
+
+passport.use(new GoogleStrategy({
+  clientID: '993502270043-tde7j9017fc3vkleork8ib8r9vef194k.apps.googleusercontent.com',
+  clientSecret:  'D-bz3BLMM3qSZ-IPF_y_Xwdm',
+  callbackURL: "/auth/google/callback"
+}, (accessToken, refreshToken, profile, cb) => {
+  // console.log(accessToken);
+  // console.log(refreshToken);
+  // console.log(profile);
+  // console.log(cb);
+
+
+  //check if user exists on the databse
+
+
+  return cb(null, profile);
+}
+));
+
+
+// Configure Passport authenticated session persistence.
+//
+// In order to restore authentication state across HTTP requests, Passport needs
+// to serialize users into and deserialize users out of the session.  In a
+// production-quality application, this would typically be as simple as
+// supplying the user ID when serializing, and querying the user record by ID
+// from the database when deserializing.  However, due to the fact that this
+// example does not have a database, the complete Facebook profile is serialized
+// and deserialized.
+passport.serializeUser(function(user, done) {
+  console.log('IN SERIALIZE');
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  console.log('IN DESERIALIZE');
+  done(null, obj);
+});
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 
 //---------- Login Page Routes --------------------------
@@ -23,6 +82,28 @@ app.post('/auth/create', eventController.createAccount);
 //###Route not connected awaiting loginpage creation
 //app.post('/auth/login', eventController.login);
 
+app.get('/auth/google' ,passport.authenticate('google', {
+  scope: ['profile', 'email']
+}))
+
+app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), eventController.login, 
+function(req,res) {
+  console.log('TRY REDIRECTING')
+  console.log('is there a user here: ',req.user.id);
+  console.log('*****',req.session.passport);
+  console.log(res.locals.data)
+  //res.send(req.user);
+
+  res.redirect('/');
+})
+
+
+app.post('/createUser', eventController.createAccount, (req,res) => {
+
+  console.log('USER CREATED');
+  res.redirect('/');
+
+})
 //---------- Create Activity Page Route -----------------
 
 //Create activity button route
@@ -54,7 +135,35 @@ app.post('/activity/:id/submit', eventController.submitChatText);
 //View event creator and attendee profile route
 app.get('/profile/:id', eventController.viewProfile);
 
+// '/' route' serve static html file
+app.use(express.static(path.resolve(__dirname, '../client')));
 
+
+//---------- Chat Box Using Websockets ---------------
+
+
+let users = [];
+let connections = [];
+
+io.sockets.on("connection", function(socket){
+  connections.push(socket);
+  console.log('Connected: %s sockets connected', connections.length);
+
+  // Disconnect
+  socket.on('disconnect', function(data){
+    connections.splice(connections.indexOf(socket), 1);
+    console.log('Disconnected: %s sockets connected', connections.length )
+  })
+
+  socket.on('send message', function(data){
+    console.log("This is socket data:", data);
+    io.sockets.emit('new message', data);
+  })
+  
+})
+
+//---------- Server ---------------
 server.listen(PORT, () => {
   console.log(`Connected and listening on ${PORT}`);
 })
+

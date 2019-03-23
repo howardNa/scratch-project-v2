@@ -12,6 +12,7 @@ const mapStateToProps = store => ({
   // lastMarketId: store.markets.lastMarketId,
   // marketList: store.markets.marketList
   searchActivities: store.activities.searchedActivities,
+  createdActivity: store.activities.createdActivity
 });
   
 const mapDispatchToProps = dispatch => ({
@@ -50,7 +51,7 @@ class CreateActivity extends Component {
         start_time: this.state.startTime,
     }
     this.props.createActivity(newActivity);
-    // this.props.history.push('/profile');
+    this.props.history.push('/profile');
   }
   render() {
     return (
@@ -62,14 +63,14 @@ class CreateActivity extends Component {
           <input className="activity-input" id={'activityInput'} onChange={this.handleChange} placeholder='Activity'></input>
 
           <h2>What time do you want to do it?</h2>
-          <input type="time" className="time-input" id={'startTime'} onChange={this.handleChange} placeholder='Time' required></input>
+          <input type="time" className="time-input" id={'startTime'} onChange={this.handleChange} required></input>
 
           
           <h2>Where do you want to do it?</h2>
           <input className="location-input" id={'locationInput'} onChange={this.handleChange} placeholder='Location' ></input>
 
-          <p><i>Got any additional info? Enter it below!</i></p>
-          <input className="additional-info-input" id={'additionalInfo'} onChange={this.handleChange} ></input>
+          <p>Got any additional info? Enter it below!</p>
+          <textarea className="additional-info-input" id={'additionalInfo'} onChange={this.handleChange} ></textarea>
           <button className="create-button" onClick={this.createActivity} >Create</button>
         
         </div>

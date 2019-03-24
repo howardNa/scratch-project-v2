@@ -5,9 +5,7 @@ import NavComponent from '../components/NavComponent.js';
 
 const NavContainer = (props) => {
   return (
-    <div>
       <NavComponent />
-    </div>
   )
 }
 

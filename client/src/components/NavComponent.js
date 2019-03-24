@@ -8,8 +8,8 @@ import green from "@material-ui/core/colors/green";
 
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
-import InputAdornment from "@material-ui/core/InputAdornment";
 import Search from "@material-ui/icons/Search";
+import Button from '@material-ui/core/Button';
 
 // const NavComponent = () => {
 //   return (
@@ -30,11 +30,11 @@ import Search from "@material-ui/icons/Search";
 //   )
 // }
 
-const NavComponent = () => {
+const NavComponent = (props) => {
   return (
     <div className="grid-container">
       <div className="logo">
-        <img className="logo-img" src="images/go-logo.jpg" />
+        <img className="logo-img" src="images/goplay-logo.jpg" />
       </div>
       <div className="search-bar">
       <Grid container spacing={8} alignItems="flex-end">
@@ -42,11 +42,14 @@ const NavComponent = () => {
             <Search />
           </Grid>
           <Grid item>
-            <TextField id="input-with-icon-grid" label="What would you like to do?" style={{width: 350 }} />
+            <TextField id="input-with-icon-grid" label="What would you like to do?" onChange={props.handleChange} onKeyPress={props.handleSearch} style={{width: 350, color: 'orange' }} />
           </Grid>
         </Grid>
       </div>
-      <div className="icons">icons</div>
+      <div className="icons">
+        <Link to="/create" style={{ textDecoration: 'none' }}><Button variant="outlined">Create</Button></Link>
+        <Link to="/profile"><img className="profile-icon" src='images/acc-icon.png' /></Link>
+      </div>
     </div>
   );
 };

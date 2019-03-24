@@ -55,11 +55,11 @@ class ActivitiesContainer extends Component {
   render() {
     return (
       <div>
-        <SearchBoxComponent 
+        {/* <SearchBoxComponent 
           title={this.state.title}
           handleChange={this.handleChange}
           handleSearch={this.handleSearch} 
-        />
+        /> */}
         <ActivitiesComponent 
           searchActivities={this.props.searchActivities} 
           viewActivityPage={this.viewActivityPage}

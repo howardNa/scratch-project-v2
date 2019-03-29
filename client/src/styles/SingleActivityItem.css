@@ -1,4 +1,39 @@
 .activity-item-container {
+    display: flex;
+    width: 590px;
+    margin-top: 30px;
+    border-left: 2.5px solid orange;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background-color: #F2F8F9;
+}
+
+.activity-item-container:hover {
+    background-color: #EEFAFE;
+}
+
+.img-box {
+    flex: 1;
+    padding-left: 12px;
+}
+
+.description-box {
+    flex: 8;
+    align-self: center;
+    padding-left: 20px;
+
+}
+
+.button-box {
+    flex: 1;
+    align-self: center;
+    padding-right: 20px;
+}
+
+
+
+/* .activity-item-container {
     margin-top: 35px;
 }
 
@@ -61,4 +96,4 @@
     margin-top: 35px;
     margin-left: 8px;
     border-radius: 5px;
-}
+} */
